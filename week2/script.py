@@ -1,7 +1,7 @@
 # ====================================
 # Assignment #2 RWET
 #
-# This script takes cooking recepies and replace random nouns with 
+# This script takes cooking recepies and replace random nouns with
 # nouns found in a Tax/IRS Dictionary (https://www.taxact.com/tax-terms/tax-dictionary.asp)
 #
 # Cristobal Valenzuela
