@@ -5,8 +5,6 @@ Using the map of New York City, this QGIS script changes the names of the street
 
 ![NY Map](imgs/ny.png?raw=true)
 
-![NY Map](imgs/ny02.png?raw=true)
-
 ![NY Map](imgs/ny03.png?raw=true)
 
 ![NY Map](imgs/ny04.png?raw=true)
