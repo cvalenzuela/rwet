@@ -7,7 +7,7 @@
 # itp 2017
 # ====================================
 
-from random import randint
+from random import randint, choice
 
 # script file
 script = open('/Users/cristobalvalenzuela/Dropbox/itp/spring2017/reading_and_writting/work/week3/data/txt/salo_cleaned.txt', 'r+')
@@ -26,8 +26,7 @@ for line in script:
 # Change all the streets name
 for feature in layer.getFeatures():
     if feature['name'] != NULL:
-        random_line = randint(0, len(script_lines)-1)
-        feature['name'] = script_lines[random_line]
+        feature['name'] = choice(script_lines)
         layer.updateFeature(feature)
 
 # commit the changes to the layer
