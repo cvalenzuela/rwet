@@ -16,7 +16,8 @@ Degrease the bike.
 ----------
 Part 3: Avoiding High-Calorie or High-Sodium Options.
 
-Slide the switch next to Set time zone automatically until the switch turns blue (much like the switch next to "Set time automatically").
+Slide the switch next to Set time zone automatically until the switch turns blue
+(much like the switch next to "Set time automatically").
 ````
 ##### How to Analyze Yourself
 ````
