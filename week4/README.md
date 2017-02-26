@@ -2,9 +2,8 @@
 
 This script scrapes [wikihow.com](http://www.wikihow.com/Main-Page) main articles of the day, and creates a random set of instructions.
 
-#### How to Learn Dutch
-
-
+##### How to Learn Dutch
+````
 Part 1: Handling Panic Attacks in the Moment.
 
 Be able to describe the game board from which the contestants chose from.
@@ -18,28 +17,9 @@ Degrease the bike.
 Part 3: Avoiding High-Calorie or High-Sodium Options.
 
 Slide the switch next to Set time zone automatically until the switch turns blue (much like the switch next to "Set time automatically").
-
-----------
-
-#### How to Jump Rope for Weight Loss
-
-Part 1: Defining Unconditional Love.
-
-Help when your loved one is ready.
-
-----------
-Part 2: Cut a Short Fade.
-
-Stop caring if you're liked.
-
-----------
-Part 3: Gaining Fluency.
-
-Stay comfortable and rest while the antibiotics take effect.
-
-----------
-
-#### How to Analyze Yourself
+````
+##### How to Analyze Yourself
+````
 Part 1: Getting in the Zone.
 
 Switch.
@@ -54,10 +34,26 @@ Part 3: Putting Your Desk Back Together.
 
 Set up a recording device and monitor.
 
+````
+##### How to Jump Rope for Weight Loss
+````
+Part 1: Defining Unconditional Love.
+
+Help when your loved one is ready.
+
 ----------
+Part 2: Cut a Short Fade.
 
-#### How to Make a Giant Spaghetti Stuffed Meatball
+Stop caring if you're liked.
 
+----------
+Part 3: Gaining Fluency.
+
+Stay comfortable and rest while the antibiotics take effect.
+
+````
+##### How to Make a Giant Spaghetti Stuffed Meatball
+````
 Part 1: Assessing Throat and Mouth Symptoms.
 
 Face your head forward with chin parallel to the ice.
@@ -71,11 +67,9 @@ Continue to get better.
 Part 3: Organizing and Presenting a Strong, Persuasive Business Case.
 
 Clean the mirror.
-
-----------
-
-#### How to Deal With a Drug Addicted Family Member or Loved One
-
+````
+##### How to Deal With a Drug Addicted Family Member or Loved One
+````
 Part 1: Identifying a Bite from a Black Widow Spider.
 
 Place your right arm in front and your left arm in back.
@@ -89,12 +83,11 @@ Discuss the use of immunotherapy with your doctor.
 Part 3: Recognizing a Black Widow Spider.
 
 Explore possible environmental allergens.
+````
 
-----------
 
-
-#### How to Get a More Flexible Back
-
+##### How to Get a More Flexible Back
+````
 Part 1: Making the Spaghetti and Meatball Mixture.
 
 Be able to determine the team colors.
@@ -113,13 +106,12 @@ Develop effective communication skills.
 Part 4: Conducting Your Title Search.
 
 Sprinkle in the salt, red pepper, basil, and dried oregano.
-
-----------
-
+````
 
 
-#### How to Tell if You Have Strep Throat
 
+##### How to Tell if You Have Strep Throat
+````
 Part 1: Getting in the Zone.
 
 Link wireless cameras to your computer.
@@ -138,12 +130,11 @@ Exercise daily.
 Part 4: Reflection Time.
 
 Be able to describe the game board from which the contestants chose from.
+````
 
-----------
 
-
-#### How to Search Property Titles on the Internet
-
+##### How to Search Property Titles on the Internet
+````
 Part 1: Wood Burning Basics.
 
 Try not to disturb the web.
@@ -161,11 +152,9 @@ Click or tap Sign up for FREE.
 Part 4: Igniting the Bunsen Burner.
 
 Use shelves.
-
-----------
-
-#### How to Tell if You Have Strep Throat
-
+````
+##### How to Tell if You Have Strep Throat
+````
 Part 1: Preparing for Planting.
 
 Check with the DMV.
@@ -194,5 +183,4 @@ Flex your mental muscles.
 Part 6: Oxidizing the Gummy Bear.
 
 Attach each video cable to a separate DVR port.
-
-----------
+````
