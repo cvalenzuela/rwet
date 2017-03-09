@@ -18,7 +18,7 @@ The irish coffee pub
 His breath smells like feces
 Many connection errors
 ```
-In part inspired by the difficulties I had when I "tried" to read this book, and in part inspired by [how bad are Google Snippets in giving prime placement to awful answers.](https://theoutline.com/post/1192/google-s-featured-snippets-are-worse-than-fake-news)
+In part inspired by the terrible idea I had of trying to read this book, and in part inspired by [how bad are Google Snippets in giving prime placement to awful answers.](https://theoutline.com/post/1192/google-s-featured-snippets-are-worse-than-fake-news)
 
 ![autcomplete](imgs/fourth.jpg)
 
