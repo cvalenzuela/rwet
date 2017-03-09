@@ -24,4 +24,4 @@ In part inspired by the difficulties I had when I "tried" to read this book, and
 
 ![autcomplete](imgs/fifth.jpg)
 
-![autcomplete](imgs/nine.jpg)
+![autcomplete](imgs/ten.jpg)
