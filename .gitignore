@@ -3,3 +3,5 @@ week3/data/*.*
 */venv
 venv
 */.ipynb_checkpoints
+.ipynb_checkpoints
+*/ipynb_checkpoints
