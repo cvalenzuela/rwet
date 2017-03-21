@@ -1,0 +1,73 @@
+
+Built-in Constants
+******************
+
+A small number of constants live in the built-in namespace.  They are:
+
+False
+
+   The false value of the "bool" type.
+
+   New in version 2.3.
+
+True
+
+   The true value of the "bool" type.
+
+   New in version 2.3.
+
+None
+
+   The sole value of "types.NoneType".  "None" is frequently used to
+   represent the absence of a value, as when default arguments are not
+   passed to a function.
+
+   Changed in version 2.4: Assignments to "None" are illegal and raise
+   a "SyntaxError".
+
+NotImplemented
+
+   Special value which can be returned by the "rich comparison"
+   special methods ("__eq__()", "__lt__()", and friends), to indicate
+   that the comparison is not implemented with respect to the other
+   type.
+
+Ellipsis
+
+   Special value used in conjunction with extended slicing syntax.
+
+__debug__
+
+   This constant is true if Python was not started with an "-O"
+   option. See also the "assert" statement.
+
+Note: The names "None" and "__debug__" cannot be reassigned
+  (assignments to them, even as an attribute name, raise
+  "SyntaxError"), so they can be considered "true" constants.
+
+  Changed in version 2.7: Assignments to "__debug__" as an attribute
+  became illegal.
+
+
+Constants added by the "site" module
+====================================
+
+The "site" module (which is imported automatically during startup,
+except if the "-S" command-line option is given) adds several
+constants to the built-in namespace.  They are useful for the
+interactive interpreter shell and should not be used in programs.
+
+quit([code=None])
+exit([code=None])
+
+   Objects that when printed, print a message like "Use quit() or
+   Ctrl-D (i.e. EOF) to exit", and when called, raise "SystemExit"
+   with the specified exit code.
+
+copyright
+license
+credits
+
+   Objects that when printed, print a message like "Type license() to
+   see the full license text", and when called, display the
+   corresponding text in a pager-like fashion (one screen at a time).

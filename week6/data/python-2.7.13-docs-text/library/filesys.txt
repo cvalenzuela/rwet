@@ -1,0 +1,52 @@
+
+File and Directory Access
+*************************
+
+The modules described in this chapter deal with disk files and
+directories.  For example, there are modules for reading the
+properties of files, manipulating paths in a portable way, and
+creating temporary files.  The full list of modules in this chapter
+is:
+
+* "os.path" --- Common pathname manipulations
+
+* "fileinput" --- Iterate over lines from multiple input streams
+
+* "stat" --- Interpreting "stat()" results
+
+* "statvfs" --- Constants used with "os.statvfs()"
+
+* "filecmp" --- File and Directory Comparisons
+
+  * The "dircmp" class
+
+* "tempfile" --- Generate temporary files and directories
+
+* "glob" --- Unix style pathname pattern expansion
+
+* "fnmatch" --- Unix filename pattern matching
+
+* "linecache" --- Random access to text lines
+
+* "shutil" --- High-level file operations
+
+  * Directory and files operations
+
+    * copytree example
+
+  * Archiving operations
+
+    * Archiving example
+
+* "dircache" --- Cached directory listings
+
+* "macpath" --- Mac OS 9 path manipulation functions
+
+See also:
+
+  Section File Objects
+     A description of Python's built-in file objects.
+
+  Module "os"
+     Operating system interfaces, including functions to work with
+     files at a lower level than the built-in file object.

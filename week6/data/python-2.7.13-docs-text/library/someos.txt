@@ -1,0 +1,130 @@
+
+Optional Operating System Services
+**********************************
+
+The modules described in this chapter provide interfaces to operating
+system features that are available on selected operating systems only.
+The interfaces are generally modeled after the Unix or C interfaces
+but they are available on some other systems as well (e.g. Windows or
+NT).  Here's an overview:
+
+* "select" --- Waiting for I/O completion
+
+  * Edge and Level Trigger Polling (epoll) Objects
+
+  * Polling Objects
+
+  * Kqueue Objects
+
+  * Kevent Objects
+
+* "threading" --- Higher-level threading interface
+
+  * Thread Objects
+
+  * Lock Objects
+
+  * RLock Objects
+
+  * Condition Objects
+
+  * Semaphore Objects
+
+    * "Semaphore" Example
+
+  * Event Objects
+
+  * Timer Objects
+
+  * Using locks, conditions, and semaphores in the "with" statement
+
+  * Importing in threaded code
+
+* "thread" --- Multiple threads of control
+
+* "dummy_threading" --- Drop-in replacement for the "threading"
+  module
+
+* "dummy_thread" --- Drop-in replacement for the "thread" module
+
+* "multiprocessing" --- Process-based "threading" interface
+
+  * Introduction
+
+    * The "Process" class
+
+    * Exchanging objects between processes
+
+    * Synchronization between processes
+
+    * Sharing state between processes
+
+    * Using a pool of workers
+
+  * Reference
+
+    * "Process" and exceptions
+
+    * Pipes and Queues
+
+    * Miscellaneous
+
+    * Connection Objects
+
+    * Synchronization primitives
+
+    * Shared "ctypes" Objects
+
+      * The "multiprocessing.sharedctypes" module
+
+    * Managers
+
+      * Customized managers
+
+      * Using a remote manager
+
+    * Proxy Objects
+
+      * Cleanup
+
+    * Process Pools
+
+    * Listeners and Clients
+
+      * Address Formats
+
+    * Authentication keys
+
+    * Logging
+
+    * The "multiprocessing.dummy" module
+
+  * Programming guidelines
+
+    * All platforms
+
+    * Windows
+
+  * Examples
+
+* "mmap" --- Memory-mapped file support
+
+* "readline" --- GNU readline interface
+
+  * Init file
+
+  * Line buffer
+
+  * History file
+
+  * History list
+
+  * Startup hooks
+
+  * Completion
+
+  * Example
+
+* "rlcompleter" --- Completion function for GNU readline
+
+  * Completer Objects

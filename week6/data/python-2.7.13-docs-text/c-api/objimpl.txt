@@ -1,0 +1,22 @@
+
+Object Implementation Support
+*****************************
+
+This chapter describes the functions, types, and macros used when
+defining new object types.
+
+* Allocating Objects on the Heap
+
+* Common Object Structures
+
+* Type Objects
+
+* Number Object Structures
+
+* Mapping Object Structures
+
+* Sequence Object Structures
+
+* Buffer Object Structures
+
+* Supporting Cyclic Garbage Collection

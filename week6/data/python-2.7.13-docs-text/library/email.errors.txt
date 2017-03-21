@@ -1,0 +1,86 @@
+
+"email.errors": Exception and Defect classes
+********************************************
+
+The following exception classes are defined in the "email.errors"
+module:
+
+exception email.errors.MessageError
+
+   This is the base class for all exceptions that the "email" package
+   can raise.  It is derived from the standard "Exception" class and
+   defines no additional methods.
+
+exception email.errors.MessageParseError
+
+   This is the base class for exceptions raised by the "Parser" class.
+   It is derived from "MessageError".
+
+exception email.errors.HeaderParseError
+
+   Raised under some error conditions when parsing the **RFC 2822**
+   headers of a message, this class is derived from
+   "MessageParseError". It can be raised from the "Parser.parse" or
+   "Parser.parsestr" methods.
+
+   Situations where it can be raised include finding an envelope
+   header after the first **RFC 2822** header of the message, finding
+   a continuation line before the first **RFC 2822** header is found,
+   or finding a line in the headers which is neither a header or a
+   continuation line.
+
+exception email.errors.BoundaryError
+
+   Raised under some error conditions when parsing the **RFC 2822**
+   headers of a message, this class is derived from
+   "MessageParseError". It can be raised from the "Parser.parse" or
+   "Parser.parsestr" methods.
+
+   Situations where it can be raised include not being able to find
+   the starting or terminating boundary in a *multipart/** message
+   when strict parsing is used.
+
+exception email.errors.MultipartConversionError
+
+   Raised when a payload is added to a "Message" object using
+   "add_payload()", but the payload is already a scalar and the
+   message's *Content-Type* main type is not either *multipart* or
+   missing.  "MultipartConversionError" multiply inherits from
+   "MessageError" and the built-in "TypeError".
+
+   Since "Message.add_payload()" is deprecated, this exception is
+   rarely raised in practice.  However the exception may also be
+   raised if the "attach()" method is called on an instance of a class
+   derived from "MIMENonMultipart" (e.g. "MIMEImage").
+
+Here's the list of the defects that the "FeedParser" can find while
+parsing messages.  Note that the defects are added to the message
+where the problem was found, so for example, if a message nested
+inside a *multipart/alternative* had a malformed header, that nested
+message object would have a defect, but the containing messages would
+not.
+
+All defect classes are subclassed from "email.errors.MessageDefect",
+but this class is *not* an exception!
+
+New in version 2.4: All the defect classes were added.
+
+* "NoBoundaryInMultipartDefect" -- A message claimed to be a
+  multipart, but had no *boundary* parameter.
+
+* "StartBoundaryNotFoundDefect" -- The start boundary claimed in the
+  *Content-Type* header was never found.
+
+* "FirstHeaderLineIsContinuationDefect" -- The message had a
+  continuation line as its first header line.
+
+* "MisplacedEnvelopeHeaderDefect" - A "Unix From" header was found
+  in the middle of a header block.
+
+* "MalformedHeaderDefect" -- A header was found that was missing a
+  colon, or was otherwise malformed.
+
+* "MultipartInvariantViolationDefect" -- A message claimed to be a
+  *multipart*, but no subparts were found.  Note that when a message
+  has this defect, its "is_multipart()" method may return false even
+  though its content type claims to be *multipart*.

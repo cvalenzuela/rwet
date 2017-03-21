@@ -1,0 +1,12 @@
+
+"macpath" --- Mac OS 9 path manipulation functions
+**************************************************
+
+This module is the Mac OS 9 (and earlier) implementation of the
+"os.path" module. It can be used to manipulate old-style Macintosh
+pathnames on Mac OS X (or any other platform).
+
+The following functions are available in this module: "normcase()",
+"normpath()", "isabs()", "join()", "split()", "isdir()", "isfile()",
+"walk()", "exists()". For other functions available in "os.path" dummy
+counterparts are available.

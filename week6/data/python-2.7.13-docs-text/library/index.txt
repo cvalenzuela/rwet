@@ -1,0 +1,758 @@
+
+The Python Standard Library
+***************************
+
+While The Python Language Reference describes the exact syntax and
+semantics of the Python language, this library reference manual
+describes the standard library that is distributed with Python. It
+also describes some of the optional components that are commonly
+included in Python distributions.
+
+Python's standard library is very extensive, offering a wide range of
+facilities as indicated by the long table of contents listed below.
+The library contains built-in modules (written in C) that provide
+access to system functionality such as file I/O that would otherwise
+be inaccessible to Python programmers, as well as modules written in
+Python that provide standardized solutions for many problems that
+occur in everyday programming. Some of these modules are explicitly
+designed to encourage and enhance the portability of Python programs
+by abstracting away platform-specifics into platform-neutral APIs.
+
+The Python installers for the Windows platform usually include the
+entire standard library and often also include many additional
+components. For Unix-like operating systems Python is normally
+provided as a collection of packages, so it may be necessary to use
+the packaging tools provided with the operating system to obtain some
+or all of the optional components.
+
+In addition to the standard library, there is a growing collection of
+several thousand components (from individual programs and modules to
+packages and entire application development frameworks), available
+from the Python Package Index.
+
+* Introduction
+
+* Built-in Functions
+
+* Non-essential Built-in Functions
+
+* Built-in Constants
+
+  * Constants added by the "site" module
+
+* Built-in Types
+
+  * Truth Value Testing
+
+  * Boolean Operations --- "and", "or", "not"
+
+  * Comparisons
+
+  * Numeric Types --- "int", "float", "long", "complex"
+
+  * Iterator Types
+
+  * Sequence Types --- "str", "unicode", "list", "tuple",
+    "bytearray", "buffer", "xrange"
+
+  * Set Types --- "set", "frozenset"
+
+  * Mapping Types --- "dict"
+
+  * File Objects
+
+  * memoryview type
+
+  * Context Manager Types
+
+  * Other Built-in Types
+
+  * Special Attributes
+
+* Built-in Exceptions
+
+  * Exception hierarchy
+
+* String Services
+
+  * "string" --- Common string operations
+
+  * "re" --- Regular expression operations
+
+  * "struct" --- Interpret strings as packed binary data
+
+  * "difflib" --- Helpers for computing deltas
+
+  * "StringIO" --- Read and write strings as files
+
+  * "cStringIO" --- Faster version of "StringIO"
+
+  * "textwrap" --- Text wrapping and filling
+
+  * "codecs" --- Codec registry and base classes
+
+  * "unicodedata" --- Unicode Database
+
+  * "stringprep" --- Internet String Preparation
+
+  * "fpformat" --- Floating point conversions
+
+* Data Types
+
+  * "datetime" --- Basic date and time types
+
+  * "calendar" --- General calendar-related functions
+
+  * "collections" --- High-performance container datatypes
+
+  * "heapq" --- Heap queue algorithm
+
+  * "bisect" --- Array bisection algorithm
+
+  * "array" --- Efficient arrays of numeric values
+
+  * "sets" --- Unordered collections of unique elements
+
+  * "sched" --- Event scheduler
+
+  * "mutex" --- Mutual exclusion support
+
+  * "Queue" --- A synchronized queue class
+
+  * "weakref" --- Weak references
+
+  * "UserDict" --- Class wrapper for dictionary objects
+
+  * "UserList" --- Class wrapper for list objects
+
+  * "UserString" --- Class wrapper for string objects
+
+  * "types" --- Names for built-in types
+
+  * "new" --- Creation of runtime internal objects
+
+  * "copy" --- Shallow and deep copy operations
+
+  * "pprint" --- Data pretty printer
+
+  * "repr" --- Alternate "repr()" implementation
+
+* Numeric and Mathematical Modules
+
+  * "numbers" --- Numeric abstract base classes
+
+  * "math" --- Mathematical functions
+
+  * "cmath" --- Mathematical functions for complex numbers
+
+  * "decimal" --- Decimal fixed point and floating point arithmetic
+
+  * "fractions" --- Rational numbers
+
+  * "random" --- Generate pseudo-random numbers
+
+  * "itertools" --- Functions creating iterators for efficient
+    looping
+
+  * "functools" --- Higher-order functions and operations on
+    callable objects
+
+  * "operator" --- Standard operators as functions
+
+* File and Directory Access
+
+  * "os.path" --- Common pathname manipulations
+
+  * "fileinput" --- Iterate over lines from multiple input streams
+
+  * "stat" --- Interpreting "stat()" results
+
+  * "statvfs" --- Constants used with "os.statvfs()"
+
+  * "filecmp" --- File and Directory Comparisons
+
+  * "tempfile" --- Generate temporary files and directories
+
+  * "glob" --- Unix style pathname pattern expansion
+
+  * "fnmatch" --- Unix filename pattern matching
+
+  * "linecache" --- Random access to text lines
+
+  * "shutil" --- High-level file operations
+
+  * "dircache" --- Cached directory listings
+
+  * "macpath" --- Mac OS 9 path manipulation functions
+
+* Data Persistence
+
+  * "pickle" --- Python object serialization
+
+  * "cPickle" --- A faster "pickle"
+
+  * "copy_reg" --- Register "pickle" support functions
+
+  * "shelve" --- Python object persistence
+
+  * "marshal" --- Internal Python object serialization
+
+  * "anydbm" --- Generic access to DBM-style databases
+
+  * "whichdb" --- Guess which DBM module created a database
+
+  * "dbm" --- Simple "database" interface
+
+  * "gdbm" --- GNU's reinterpretation of dbm
+
+  * "dbhash" --- DBM-style interface to the BSD database library
+
+  * "bsddb" --- Interface to Berkeley DB library
+
+  * "dumbdbm" --- Portable DBM implementation
+
+  * "sqlite3" --- DB-API 2.0 interface for SQLite databases
+
+* Data Compression and Archiving
+
+  * "zlib" --- Compression compatible with **gzip**
+
+  * "gzip" --- Support for **gzip** files
+
+  * "bz2" --- Compression compatible with **bzip2**
+
+  * "zipfile" --- Work with ZIP archives
+
+  * "tarfile" --- Read and write tar archive files
+
+* File Formats
+
+  * "csv" --- CSV File Reading and Writing
+
+  * "ConfigParser" --- Configuration file parser
+
+  * "robotparser" ---  Parser for robots.txt
+
+  * "netrc" --- netrc file processing
+
+  * "xdrlib" --- Encode and decode XDR data
+
+  * "plistlib" --- Generate and parse Mac OS X ".plist" files
+
+* Cryptographic Services
+
+  * "hashlib" --- Secure hashes and message digests
+
+  * "hmac" --- Keyed-Hashing for Message Authentication
+
+  * "md5" --- MD5 message digest algorithm
+
+  * "sha" --- SHA-1 message digest algorithm
+
+* Generic Operating System Services
+
+  * "os" --- Miscellaneous operating system interfaces
+
+  * "io" --- Core tools for working with streams
+
+  * "time" --- Time access and conversions
+
+  * "argparse" --- Parser for command-line options, arguments and
+    sub- commands
+
+  * "optparse" --- Parser for command line options
+
+  * "getopt" --- C-style parser for command line options
+
+  * "logging" --- Logging facility for Python
+
+  * "logging.config" --- Logging configuration
+
+  * "logging.handlers" --- Logging handlers
+
+  * "getpass" --- Portable password input
+
+  * "curses" --- Terminal handling for character-cell displays
+
+  * "curses.textpad" --- Text input widget for curses programs
+
+  * "curses.ascii" --- Utilities for ASCII characters
+
+  * "curses.panel" --- A panel stack extension for curses
+
+  * "platform" ---  Access to underlying platform's identifying data
+
+  * "errno" --- Standard errno system symbols
+
+  * "ctypes" --- A foreign function library for Python
+
+* Optional Operating System Services
+
+  * "select" --- Waiting for I/O completion
+
+  * "threading" --- Higher-level threading interface
+
+  * "thread" --- Multiple threads of control
+
+  * "dummy_threading" --- Drop-in replacement for the "threading"
+    module
+
+  * "dummy_thread" --- Drop-in replacement for the "thread" module
+
+  * "multiprocessing" --- Process-based "threading" interface
+
+  * "mmap" --- Memory-mapped file support
+
+  * "readline" --- GNU readline interface
+
+  * "rlcompleter" --- Completion function for GNU readline
+
+* Interprocess Communication and Networking
+
+  * "subprocess" --- Subprocess management
+
+  * "socket" --- Low-level networking interface
+
+  * "ssl" --- TLS/SSL wrapper for socket objects
+
+  * "signal" --- Set handlers for asynchronous events
+
+  * "popen2" --- Subprocesses with accessible I/O streams
+
+  * "asyncore" --- Asynchronous socket handler
+
+  * "asynchat" --- Asynchronous socket command/response handler
+
+* Internet Data Handling
+
+  * "email" --- An email and MIME handling package
+
+  * "json" --- JSON encoder and decoder
+
+  * "mailcap" --- Mailcap file handling
+
+  * "mailbox" --- Manipulate mailboxes in various formats
+
+  * "mhlib" --- Access to MH mailboxes
+
+  * "mimetools" --- Tools for parsing MIME messages
+
+  * "mimetypes" --- Map filenames to MIME types
+
+  * "MimeWriter" --- Generic MIME file writer
+
+  * "mimify" --- MIME processing of mail messages
+
+  * "multifile" --- Support for files containing distinct parts
+
+  * "rfc822" --- Parse RFC 2822 mail headers
+
+  * "base64" --- RFC 3548: Base16, Base32, Base64 Data Encodings
+
+  * "binhex" --- Encode and decode binhex4 files
+
+  * "binascii" --- Convert between binary and ASCII
+
+  * "quopri" --- Encode and decode MIME quoted-printable data
+
+  * "uu" --- Encode and decode uuencode files
+
+* Structured Markup Processing Tools
+
+  * "HTMLParser" --- Simple HTML and XHTML parser
+
+  * "sgmllib" --- Simple SGML parser
+
+  * "htmllib" --- A parser for HTML documents
+
+  * "htmlentitydefs" --- Definitions of HTML general entities
+
+  * XML Processing Modules
+
+  * XML vulnerabilities
+
+  * "xml.etree.ElementTree" --- The ElementTree XML API
+
+  * "xml.dom" --- The Document Object Model API
+
+  * "xml.dom.minidom" --- Minimal DOM implementation
+
+  * "xml.dom.pulldom" --- Support for building partial DOM trees
+
+  * "xml.sax" --- Support for SAX2 parsers
+
+  * "xml.sax.handler" --- Base classes for SAX handlers
+
+  * "xml.sax.saxutils" --- SAX Utilities
+
+  * "xml.sax.xmlreader" --- Interface for XML parsers
+
+  * "xml.parsers.expat" --- Fast XML parsing using Expat
+
+* Internet Protocols and Support
+
+  * "webbrowser" --- Convenient Web-browser controller
+
+  * "cgi" --- Common Gateway Interface support
+
+  * "cgitb" --- Traceback manager for CGI scripts
+
+  * "wsgiref" --- WSGI Utilities and Reference Implementation
+
+  * "urllib" --- Open arbitrary resources by URL
+
+  * "urllib2" --- extensible library for opening URLs
+
+  * "httplib" --- HTTP protocol client
+
+  * "ftplib" --- FTP protocol client
+
+  * "poplib" --- POP3 protocol client
+
+  * "imaplib" --- IMAP4 protocol client
+
+  * "nntplib" --- NNTP protocol client
+
+  * "smtplib" --- SMTP protocol client
+
+  * "smtpd" --- SMTP Server
+
+  * "telnetlib" --- Telnet client
+
+  * "uuid" --- UUID objects according to RFC 4122
+
+  * "urlparse" --- Parse URLs into components
+
+  * "SocketServer" --- A framework for network servers
+
+  * "BaseHTTPServer" --- Basic HTTP server
+
+  * "SimpleHTTPServer" --- Simple HTTP request handler
+
+  * "CGIHTTPServer" --- CGI-capable HTTP request handler
+
+  * "cookielib" --- Cookie handling for HTTP clients
+
+  * "Cookie" --- HTTP state management
+
+  * "xmlrpclib" --- XML-RPC client access
+
+  * "SimpleXMLRPCServer" --- Basic XML-RPC server
+
+  * "DocXMLRPCServer" --- Self-documenting XML-RPC server
+
+* Multimedia Services
+
+  * "audioop" --- Manipulate raw audio data
+
+  * "imageop" --- Manipulate raw image data
+
+  * "aifc" --- Read and write AIFF and AIFC files
+
+  * "sunau" --- Read and write Sun AU files
+
+  * "wave" --- Read and write WAV files
+
+  * "chunk" --- Read IFF chunked data
+
+  * "colorsys" --- Conversions between color systems
+
+  * "imghdr" --- Determine the type of an image
+
+  * "sndhdr" --- Determine type of sound file
+
+  * "ossaudiodev" --- Access to OSS-compatible audio devices
+
+* Internationalization
+
+  * "gettext" --- Multilingual internationalization services
+
+  * "locale" --- Internationalization services
+
+* Program Frameworks
+
+  * "cmd" --- Support for line-oriented command interpreters
+
+  * "shlex" --- Simple lexical analysis
+
+* Graphical User Interfaces with Tk
+
+  * "Tkinter" --- Python interface to Tcl/Tk
+
+  * "ttk" --- Tk themed widgets
+
+  * "Tix" --- Extension widgets for Tk
+
+  * "ScrolledText" --- Scrolled Text Widget
+
+  * "turtle" --- Turtle graphics for Tk
+
+  * IDLE
+
+  * Other Graphical User Interface Packages
+
+* Development Tools
+
+  * "pydoc" --- Documentation generator and online help system
+
+  * "doctest" --- Test interactive Python examples
+
+  * "unittest" --- Unit testing framework
+
+  * 2to3 - Automated Python 2 to 3 code translation
+
+  * "test" --- Regression tests package for Python
+
+  * "test.test_support" --- Utility functions for tests
+
+* Debugging and Profiling
+
+  * "bdb" --- Debugger framework
+
+  * "pdb" --- The Python Debugger
+
+  * Debugger Commands
+
+  * The Python Profilers
+
+  * "hotshot" --- High performance logging profiler
+
+  * "timeit" --- Measure execution time of small code snippets
+
+  * "trace" --- Trace or track Python statement execution
+
+* Software Packaging and Distribution
+
+  * "distutils" --- Building and installing Python modules
+
+  * "ensurepip" --- Bootstrapping the "pip" installer
+
+* Python Runtime Services
+
+  * "sys" --- System-specific parameters and functions
+
+  * "sysconfig" --- Provide access to Python's configuration
+    information
+
+  * "__builtin__" --- Built-in objects
+
+  * "future_builtins" --- Python 3 builtins
+
+  * "__main__" --- Top-level script environment
+
+  * "warnings" --- Warning control
+
+  * "contextlib" --- Utilities for "with"-statement contexts
+
+  * "abc" --- Abstract Base Classes
+
+  * "atexit" --- Exit handlers
+
+  * "traceback" --- Print or retrieve a stack traceback
+
+  * "__future__" --- Future statement definitions
+
+  * "gc" --- Garbage Collector interface
+
+  * "inspect" --- Inspect live objects
+
+  * "site" --- Site-specific configuration hook
+
+  * "user" --- User-specific configuration hook
+
+  * "fpectl" --- Floating point exception control
+
+* Custom Python Interpreters
+
+  * "code" --- Interpreter base classes
+
+  * "codeop" --- Compile Python code
+
+* Restricted Execution
+
+  * "rexec" --- Restricted execution framework
+
+  * "Bastion" --- Restricting access to objects
+
+* Importing Modules
+
+  * "imp" --- Access the "import" internals
+
+  * "importlib" --- Convenience wrappers for "__import__()"
+
+  * "imputil" --- Import utilities
+
+  * "zipimport" --- Import modules from Zip archives
+
+  * "pkgutil" --- Package extension utility
+
+  * "modulefinder" --- Find modules used by a script
+
+  * "runpy" --- Locating and executing Python modules
+
+* Python Language Services
+
+  * "parser" --- Access Python parse trees
+
+  * "ast" --- Abstract Syntax Trees
+
+  * "symtable" --- Access to the compiler's symbol tables
+
+  * "symbol" --- Constants used with Python parse trees
+
+  * "token" --- Constants used with Python parse trees
+
+  * "keyword" --- Testing for Python keywords
+
+  * "tokenize" --- Tokenizer for Python source
+
+  * "tabnanny" --- Detection of ambiguous indentation
+
+  * "pyclbr" --- Python class browser support
+
+  * "py_compile" --- Compile Python source files
+
+  * "compileall" --- Byte-compile Python libraries
+
+  * "dis" --- Disassembler for Python bytecode
+
+  * "pickletools" --- Tools for pickle developers
+
+* Python compiler package
+
+  * The basic interface
+
+  * Limitations
+
+  * Python Abstract Syntax
+
+  * Using Visitors to Walk ASTs
+
+  * Bytecode Generation
+
+* Miscellaneous Services
+
+  * "formatter" --- Generic output formatting
+
+* MS Windows Specific Services
+
+  * "msilib" --- Read and write Microsoft Installer files
+
+  * "msvcrt" --- Useful routines from the MS VC++ runtime
+
+  * "_winreg" --- Windows registry access
+
+  * "winsound" --- Sound-playing interface for Windows
+
+* Unix Specific Services
+
+  * "posix" --- The most common POSIX system calls
+
+  * "pwd" --- The password database
+
+  * "spwd" --- The shadow password database
+
+  * "grp" --- The group database
+
+  * "crypt" --- Function to check Unix passwords
+
+  * "dl" --- Call C functions in shared objects
+
+  * "termios" --- POSIX style tty control
+
+  * "tty" --- Terminal control functions
+
+  * "pty" --- Pseudo-terminal utilities
+
+  * "fcntl" --- The "fcntl" and "ioctl" system calls
+
+  * "pipes" --- Interface to shell pipelines
+
+  * "posixfile" --- File-like objects with locking support
+
+  * "resource" --- Resource usage information
+
+  * "nis" --- Interface to Sun's NIS (Yellow Pages)
+
+  * "syslog" --- Unix syslog library routines
+
+  * "commands" --- Utilities for running commands
+
+* Mac OS X specific services
+
+  * "ic" --- Access to the Mac OS X Internet Config
+
+  * "MacOS" --- Access to Mac OS interpreter features
+
+  * "macostools" --- Convenience routines for file manipulation
+
+  * "findertools" --- The **finder**'s Apple Events interface
+
+  * "EasyDialogs" --- Basic Macintosh dialogs
+
+  * "FrameWork" --- Interactive application framework
+
+  * "autoGIL" --- Global Interpreter Lock handling in event loops
+
+  * Mac OS Toolbox Modules
+
+  * "ColorPicker" --- Color selection dialog
+
+* MacPython OSA Modules
+
+  * "gensuitemodule" --- Generate OSA stub packages
+
+  * "aetools" --- OSA client support
+
+  * "aepack" --- Conversion between Python variables and AppleEvent
+    data containers
+
+  * "aetypes" --- AppleEvent objects
+
+  * "MiniAEFrame" --- Open Scripting Architecture server support
+
+* SGI IRIX Specific Services
+
+  * "al" --- Audio functions on the SGI
+
+  * "AL" --- Constants used with the "al" module
+
+  * "cd" --- CD-ROM access on SGI systems
+
+  * "fl" --- FORMS library for graphical user interfaces
+
+  * "FL" --- Constants used with the "fl" module
+
+  * "flp" --- Functions for loading stored FORMS designs
+
+  * "fm" --- *Font Manager* interface
+
+  * "gl" --- *Graphics Library* interface
+
+  * "DEVICE" --- Constants used with the "gl" module
+
+  * "GL" --- Constants used with the "gl" module
+
+  * "imgfile" --- Support for SGI imglib files
+
+  * "jpeg" --- Read and write JPEG files
+
+* SunOS Specific Services
+
+  * "sunaudiodev" --- Access to Sun audio hardware
+
+  * "SUNAUDIODEV" --- Constants used with "sunaudiodev"
+
+* Undocumented Modules
+
+  * Miscellaneous useful utilities
+
+  * Platform specific modules
+
+  * Multimedia
+
+  * Undocumented Mac OS modules
+
+  * Obsolete
+
+  * SGI-specific Extension modules

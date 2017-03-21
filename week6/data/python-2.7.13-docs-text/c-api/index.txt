@@ -1,0 +1,123 @@
+
+Python/C API Reference Manual
+*****************************
+
+This manual documents the API used by C and C++ programmers who want
+to write extension modules or embed Python.  It is a companion to
+Extending and Embedding the Python Interpreter, which describes the
+general principles of extension writing but does not document the API
+functions in detail.
+
+* Introduction
+
+  * Include Files
+
+  * Objects, Types and Reference Counts
+
+  * Exceptions
+
+  * Embedding Python
+
+  * Debugging Builds
+
+* The Very High Level Layer
+
+* Reference Counting
+
+* Exception Handling
+
+  * Unicode Exception Objects
+
+  * Recursion Control
+
+  * Standard Exceptions
+
+  * String Exceptions
+
+* Utilities
+
+  * Operating System Utilities
+
+  * System Functions
+
+  * Process Control
+
+  * Importing Modules
+
+  * Data marshalling support
+
+  * Parsing arguments and building values
+
+  * String conversion and formatting
+
+  * Reflection
+
+  * Codec registry and support functions
+
+* Abstract Objects Layer
+
+  * Object Protocol
+
+  * Number Protocol
+
+  * Sequence Protocol
+
+  * Mapping Protocol
+
+  * Iterator Protocol
+
+  * Old Buffer Protocol
+
+* Concrete Objects Layer
+
+  * Fundamental Objects
+
+  * Numeric Objects
+
+  * Sequence Objects
+
+  * Mapping Objects
+
+  * Other Objects
+
+* Initialization, Finalization, and Threads
+
+  * Initializing and finalizing the interpreter
+
+  * Process-wide parameters
+
+  * Thread State and the Global Interpreter Lock
+
+  * Sub-interpreter support
+
+  * Asynchronous Notifications
+
+  * Profiling and Tracing
+
+  * Advanced Debugger Support
+
+* Memory Management
+
+  * Overview
+
+  * Memory Interface
+
+  * Examples
+
+* Object Implementation Support
+
+  * Allocating Objects on the Heap
+
+  * Common Object Structures
+
+  * Type Objects
+
+  * Number Object Structures
+
+  * Mapping Object Structures
+
+  * Sequence Object Structures
+
+  * Buffer Object Structures
+
+  * Supporting Cyclic Garbage Collection

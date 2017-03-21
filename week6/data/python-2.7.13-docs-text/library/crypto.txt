@@ -1,0 +1,17 @@
+
+Cryptographic Services
+**********************
+
+The modules described in this chapter implement various algorithms of
+a cryptographic nature.  They are available at the discretion of the
+installation. Here's an overview:
+
+* "hashlib" --- Secure hashes and message digests
+
+  * Key derivation
+
+* "hmac" --- Keyed-Hashing for Message Authentication
+
+* "md5" --- MD5 message digest algorithm
+
+* "sha" --- SHA-1 message digest algorithm

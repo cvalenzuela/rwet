@@ -1,0 +1,62 @@
+
+"future_builtins" --- Python 3 builtins
+***************************************
+
+New in version 2.6.
+
+This module provides functions that exist in 2.x, but have different
+behavior in Python 3, so they cannot be put into the 2.x builtins
+namespace.
+
+Instead, if you want to write code compatible with Python 3 builtins,
+import them from this module, like this:
+
+   from future_builtins import map, filter
+
+   ... code using Python 3-style map and filter ...
+
+The *2to3* tool that ports Python 2 code to Python 3 will recognize
+this usage and leave the new builtins alone.
+
+Note: The Python 3 "print()" function is already in the builtins,
+  but cannot be accessed from Python 2 code unless you use the
+  appropriate future statement:
+
+     from __future__ import print_function
+
+Available builtins are:
+
+future_builtins.ascii(object)
+
+   Returns the same as "repr()".  In Python 3, "repr()" will return
+   printable Unicode characters unescaped, while "ascii()" will always
+   backslash-escape them.  Using "future_builtins.ascii()" instead of
+   "repr()" in 2.6 code makes it clear that you need a pure ASCII
+   return value.
+
+future_builtins.filter(function, iterable)
+
+   Works like "itertools.ifilter()".
+
+future_builtins.hex(object)
+
+   Works like the built-in "hex()", but instead of "__hex__()" it will
+   use the "__index__()" method on its argument to get an integer that
+   is then converted to hexadecimal.
+
+future_builtins.map(function, iterable, ...)
+
+   Works like "itertools.imap()".
+
+   Note: In Python 3, "map()" does not accept "None" for the
+     function argument.
+
+future_builtins.oct(object)
+
+   Works like the built-in "oct()", but instead of "__oct__()" it will
+   use the "__index__()" method on its argument to get an integer that
+   is then converted to octal.
+
+future_builtins.zip(*iterables)
+
+   Works like "itertools.izip()".

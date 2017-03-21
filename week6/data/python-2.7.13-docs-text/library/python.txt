@@ -1,0 +1,78 @@
+
+Python Runtime Services
+***********************
+
+The modules described in this chapter provide a wide range of services
+related to the Python interpreter and its interaction with its
+environment.  Here's an overview:
+
+* "sys" --- System-specific parameters and functions
+
+* "sysconfig" --- Provide access to Python's configuration
+  information
+
+  * Configuration variables
+
+  * Installation paths
+
+  * Other functions
+
+* "__builtin__" --- Built-in objects
+
+* "future_builtins" --- Python 3 builtins
+
+* "__main__" --- Top-level script environment
+
+* "warnings" --- Warning control
+
+  * Warning Categories
+
+  * The Warnings Filter
+
+    * Default Warning Filters
+
+  * Temporarily Suppressing Warnings
+
+  * Testing Warnings
+
+  * Updating Code For New Versions of Python
+
+  * Available Functions
+
+  * Available Context Managers
+
+* "contextlib" --- Utilities for "with"-statement contexts
+
+* "abc" --- Abstract Base Classes
+
+* "atexit" --- Exit handlers
+
+  * "atexit" Example
+
+* "traceback" --- Print or retrieve a stack traceback
+
+  * Traceback Examples
+
+* "__future__" --- Future statement definitions
+
+* "gc" --- Garbage Collector interface
+
+* "inspect" --- Inspect live objects
+
+  * Types and members
+
+  * Retrieving source code
+
+  * Classes and functions
+
+  * The interpreter stack
+
+* "site" --- Site-specific configuration hook
+
+* "user" --- User-specific configuration hook
+
+* "fpectl" --- Floating point exception control
+
+  * Example
+
+  * Limitations and other considerations

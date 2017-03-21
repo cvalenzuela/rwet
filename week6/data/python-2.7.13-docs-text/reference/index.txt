@@ -1,0 +1,140 @@
+
+The Python Language Reference
+*****************************
+
+This reference manual describes the syntax and "core semantics" of the
+language. It is terse, but attempts to be exact and complete. The
+semantics of non-essential built-in object types and of the built-in
+functions and modules are described in The Python Standard Library.
+For an informal introduction to the language, see The Python Tutorial.
+For C or C++ programmers, two additional manuals exist: Extending and
+Embedding the Python Interpreter describes the high-level picture of
+how to write a Python extension module, and the Python/C API Reference
+Manual describes the interfaces available to C/C++ programmers in
+detail.
+
+* Introduction
+
+  * Alternate Implementations
+
+  * Notation
+
+* Lexical analysis
+
+  * Line structure
+
+  * Other tokens
+
+  * Identifiers and keywords
+
+  * Literals
+
+  * Operators
+
+  * Delimiters
+
+* Data model
+
+  * Objects, values and types
+
+  * The standard type hierarchy
+
+  * New-style and classic classes
+
+  * Special method names
+
+* Execution model
+
+  * Naming and binding
+
+  * Exceptions
+
+* Expressions
+
+  * Arithmetic conversions
+
+  * Atoms
+
+  * Primaries
+
+  * The power operator
+
+  * Unary arithmetic and bitwise operations
+
+  * Binary arithmetic operations
+
+  * Shifting operations
+
+  * Binary bitwise operations
+
+  * Comparisons
+
+  * Boolean operations
+
+  * Conditional Expressions
+
+  * Lambdas
+
+  * Expression lists
+
+  * Evaluation order
+
+  * Operator precedence
+
+* Simple statements
+
+  * Expression statements
+
+  * Assignment statements
+
+  * The "assert" statement
+
+  * The "pass" statement
+
+  * The "del" statement
+
+  * The "print" statement
+
+  * The "return" statement
+
+  * The "yield" statement
+
+  * The "raise" statement
+
+  * The "break" statement
+
+  * The "continue" statement
+
+  * The "import" statement
+
+  * The "global" statement
+
+  * The "exec" statement
+
+* Compound statements
+
+  * The "if" statement
+
+  * The "while" statement
+
+  * The "for" statement
+
+  * The "try" statement
+
+  * The "with" statement
+
+  * Function definitions
+
+  * Class definitions
+
+* Top-level components
+
+  * Complete Python programs
+
+  * File input
+
+  * Interactive input
+
+  * Expression input
+
+* Full Grammar specification

@@ -1,0 +1,151 @@
+
+File Objects
+************
+
+Python's built-in file objects are implemented entirely on the "FILE*"
+support from the C standard library.  This is an implementation detail
+and may change in future releases of Python.
+
+PyFileObject
+
+   This subtype of "PyObject" represents a Python file object.
+
+PyTypeObject PyFile_Type
+
+   This instance of "PyTypeObject" represents the Python file type.
+   This is exposed to Python programs as "file" and "types.FileType".
+
+int PyFile_Check(PyObject *p)
+
+   Return true if its argument is a "PyFileObject" or a subtype of
+   "PyFileObject".
+
+   Changed in version 2.2: Allowed subtypes to be accepted.
+
+int PyFile_CheckExact(PyObject *p)
+
+   Return true if its argument is a "PyFileObject", but not a subtype
+   of "PyFileObject".
+
+   New in version 2.2.
+
+PyObject* PyFile_FromString(char *filename, char *mode)
+    *Return value: New reference.*
+
+   On success, return a new file object that is opened on the file
+   given by *filename*, with a file mode given by *mode*, where *mode*
+   has the same semantics as the standard C routine "fopen()".  On
+   failure, return *NULL*.
+
+PyObject* PyFile_FromFile(FILE *fp, char *name, char *mode, int (*close)(FILE*))
+    *Return value: New reference.*
+
+   Create a new "PyFileObject" from the already-open standard C file
+   pointer, *fp*.  The function *close* will be called when the file
+   should be closed.  Return *NULL* and close the file using *close*
+   on failure. *close* is optional and can be set to *NULL*.
+
+FILE* PyFile_AsFile(PyObject *p)
+
+   Return the file object associated with *p* as a "FILE*".
+
+   If the caller will ever use the returned "FILE*" object while the
+   *GIL* is released it must also call the "PyFile_IncUseCount()" and
+   "PyFile_DecUseCount()" functions described below as appropriate.
+
+void PyFile_IncUseCount(PyFileObject *p)
+
+   Increments the PyFileObject's internal use count to indicate that
+   the underlying "FILE*" is being used. This prevents Python from
+   calling f_close() on it from another thread. Callers of this must
+   call "PyFile_DecUseCount()" when they are finished with the
+   "FILE*".  Otherwise the file object will never be closed by Python.
+
+   The *GIL* must be held while calling this function.
+
+   The suggested use is to call this after "PyFile_AsFile()" and
+   before you release the GIL:
+
+      FILE *fp = PyFile_AsFile(p);
+      PyFile_IncUseCount(p);
+      /* ... */
+      Py_BEGIN_ALLOW_THREADS
+      do_something(fp);
+      Py_END_ALLOW_THREADS
+      /* ... */
+      PyFile_DecUseCount(p);
+
+   New in version 2.6.
+
+void PyFile_DecUseCount(PyFileObject *p)
+
+   Decrements the PyFileObject's internal unlocked_count member to
+   indicate that the caller is done with its own use of the "FILE*".
+   This may only be called to undo a prior call to
+   "PyFile_IncUseCount()".
+
+   The *GIL* must be held while calling this function (see the example
+   above).
+
+   New in version 2.6.
+
+PyObject* PyFile_GetLine(PyObject *p, int n)
+    *Return value: New reference.*
+
+   Equivalent to "p.readline([n])", this function reads one line from
+   the object *p*.  *p* may be a file object or any object with a
+   "readline()" method.  If *n* is "0", exactly one line is read,
+   regardless of the length of the line.  If *n* is greater than "0",
+   no more than *n* bytes will be read from the file; a partial line
+   can be returned.  In both cases, an empty string is returned if the
+   end of the file is reached immediately.  If *n* is less than "0",
+   however, one line is read regardless of length, but "EOFError" is
+   raised if the end of the file is reached immediately.
+
+PyObject* PyFile_Name(PyObject *p)
+    *Return value: Borrowed reference.*
+
+   Return the name of the file specified by *p* as a string object.
+
+void PyFile_SetBufSize(PyFileObject *p, int n)
+
+   Available on systems with "setvbuf()" only.  This should only be
+   called immediately after file object creation.
+
+int PyFile_SetEncoding(PyFileObject *p, const char *enc)
+
+   Set the file's encoding for Unicode output to *enc*. Return "1" on
+   success and "0" on failure.
+
+   New in version 2.3.
+
+int PyFile_SetEncodingAndErrors(PyFileObject *p, const char *enc, *errors)
+
+   Set the file's encoding for Unicode output to *enc*, and its error
+   mode to *err*. Return "1" on success and "0" on failure.
+
+   New in version 2.6.
+
+int PyFile_SoftSpace(PyObject *p, int newflag)
+
+   This function exists for internal use by the interpreter.  Set the
+   "softspace" attribute of *p* to *newflag* and return the previous
+   value. *p* does not have to be a file object for this function to
+   work properly; any object is supported (thought its only
+   interesting if the "softspace" attribute can be set).  This
+   function clears any errors, and will return "0" as the previous
+   value if the attribute either does not exist or if there were
+   errors in retrieving it.  There is no way to detect errors from
+   this function, but doing so should not be needed.
+
+int PyFile_WriteObject(PyObject *obj, PyObject *p, int flags)
+
+   Write object *obj* to file object *p*.  The only supported flag for
+   *flags* is "Py_PRINT_RAW"; if given, the "str()" of the object is
+   written instead of the "repr()".  Return "0" on success or "-1" on
+   failure; the appropriate exception will be set.
+
+int PyFile_WriteString(const char *s, PyObject *p)
+
+   Write string *s* to file object *p*.  Return "0" on success or "-1"
+   on failure; the appropriate exception will be set.

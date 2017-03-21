@@ -1,0 +1,249 @@
+
+Internet Protocols and Support
+******************************
+
+The modules described in this chapter implement Internet protocols and
+support for related technology.  They are all implemented in Python.
+Most of these modules require the presence of the system-dependent
+module "socket", which is currently supported on most popular
+platforms.  Here is an overview:
+
+* "webbrowser" --- Convenient Web-browser controller
+
+  * Browser Controller Objects
+
+* "cgi" --- Common Gateway Interface support
+
+  * Introduction
+
+  * Using the cgi module
+
+  * Higher Level Interface
+
+  * Old classes
+
+  * Functions
+
+  * Caring about security
+
+  * Installing your CGI script on a Unix system
+
+  * Testing your CGI script
+
+  * Debugging CGI scripts
+
+  * Common problems and solutions
+
+* "cgitb" --- Traceback manager for CGI scripts
+
+* "wsgiref" --- WSGI Utilities and Reference Implementation
+
+  * "wsgiref.util" -- WSGI environment utilities
+
+  * "wsgiref.headers" -- WSGI response header tools
+
+  * "wsgiref.simple_server" -- a simple WSGI HTTP server
+
+  * "wsgiref.validate" --- WSGI conformance checker
+
+  * "wsgiref.handlers" -- server/gateway base classes
+
+  * Examples
+
+* "urllib" --- Open arbitrary resources by URL
+
+  * High-level interface
+
+  * Utility functions
+
+  * URL Opener objects
+
+  * "urllib" Restrictions
+
+  * Examples
+
+* "urllib2" --- extensible library for opening URLs
+
+  * Request Objects
+
+  * OpenerDirector Objects
+
+  * BaseHandler Objects
+
+  * HTTPRedirectHandler Objects
+
+  * HTTPCookieProcessor Objects
+
+  * ProxyHandler Objects
+
+  * HTTPPasswordMgr Objects
+
+  * AbstractBasicAuthHandler Objects
+
+  * HTTPBasicAuthHandler Objects
+
+  * ProxyBasicAuthHandler Objects
+
+  * AbstractDigestAuthHandler Objects
+
+  * HTTPDigestAuthHandler Objects
+
+  * ProxyDigestAuthHandler Objects
+
+  * HTTPHandler Objects
+
+  * HTTPSHandler Objects
+
+  * FileHandler Objects
+
+  * FTPHandler Objects
+
+  * CacheFTPHandler Objects
+
+  * UnknownHandler Objects
+
+  * HTTPErrorProcessor Objects
+
+  * Examples
+
+* "httplib" --- HTTP protocol client
+
+  * HTTPConnection Objects
+
+  * HTTPResponse Objects
+
+  * Examples
+
+* "ftplib" --- FTP protocol client
+
+  * FTP Objects
+
+  * FTP_TLS Objects
+
+* "poplib" --- POP3 protocol client
+
+  * POP3 Objects
+
+  * POP3 Example
+
+* "imaplib" --- IMAP4 protocol client
+
+  * IMAP4 Objects
+
+  * IMAP4 Example
+
+* "nntplib" --- NNTP protocol client
+
+  * NNTP Objects
+
+* "smtplib" --- SMTP protocol client
+
+  * SMTP Objects
+
+  * SMTP Example
+
+* "smtpd" --- SMTP Server
+
+  * SMTPServer Objects
+
+  * DebuggingServer Objects
+
+  * PureProxy Objects
+
+  * MailmanProxy Objects
+
+* "telnetlib" --- Telnet client
+
+  * Telnet Objects
+
+  * Telnet Example
+
+* "uuid" --- UUID objects according to RFC 4122
+
+  * Example
+
+* "urlparse" --- Parse URLs into components
+
+  * Results of "urlparse()" and "urlsplit()"
+
+* "SocketServer" --- A framework for network servers
+
+  * Server Creation Notes
+
+  * Server Objects
+
+  * Request Handler Objects
+
+  * Examples
+
+    * "SocketServer.TCPServer" Example
+
+    * "SocketServer.UDPServer" Example
+
+    * Asynchronous Mixins
+
+* "BaseHTTPServer" --- Basic HTTP server
+
+  * More examples
+
+* "SimpleHTTPServer" --- Simple HTTP request handler
+
+* "CGIHTTPServer" --- CGI-capable HTTP request handler
+
+* "cookielib" --- Cookie handling for HTTP clients
+
+  * CookieJar and FileCookieJar Objects
+
+  * FileCookieJar subclasses and co-operation with web browsers
+
+  * CookiePolicy Objects
+
+  * DefaultCookiePolicy Objects
+
+  * Cookie Objects
+
+  * Examples
+
+* "Cookie" --- HTTP state management
+
+  * Cookie Objects
+
+  * Morsel Objects
+
+  * Example
+
+* "xmlrpclib" --- XML-RPC client access
+
+  * ServerProxy Objects
+
+  * Boolean Objects
+
+  * DateTime Objects
+
+  * Binary Objects
+
+  * Fault Objects
+
+  * ProtocolError Objects
+
+  * MultiCall Objects
+
+  * Convenience Functions
+
+  * Example of Client Usage
+
+  * Example of Client and Server Usage
+
+* "SimpleXMLRPCServer" --- Basic XML-RPC server
+
+  * SimpleXMLRPCServer Objects
+
+    * SimpleXMLRPCServer Example
+
+  * CGIXMLRPCRequestHandler
+
+* "DocXMLRPCServer" --- Self-documenting XML-RPC server
+
+  * DocXMLRPCServer Objects
+
+  * DocCGIXMLRPCRequestHandler

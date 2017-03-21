@@ -1,0 +1,138 @@
+
+Internet Data Handling
+**********************
+
+This chapter describes modules which support handling data formats
+commonly used on the Internet.
+
+* "email" --- An email and MIME handling package
+
+  * "email.message": Representing an email message
+
+  * "email.parser": Parsing email messages
+
+    * FeedParser API
+
+    * Parser class API
+
+    * Additional notes
+
+  * "email.generator": Generating MIME documents
+
+  * "email.mime": Creating email and MIME objects from scratch
+
+  * "email.header": Internationalized headers
+
+  * "email.charset": Representing character sets
+
+  * "email.encoders": Encoders
+
+  * "email.errors": Exception and Defect classes
+
+  * "email.utils": Miscellaneous utilities
+
+  * "email.iterators": Iterators
+
+  * "email": Examples
+
+  * Package History
+
+  * Differences from "mimelib"
+
+* "json" --- JSON encoder and decoder
+
+  * Basic Usage
+
+  * Encoders and Decoders
+
+  * Standard Compliance and Interoperability
+
+    * Character Encodings
+
+    * Infinite and NaN Number Values
+
+    * Repeated Names Within an Object
+
+    * Top-level Non-Object, Non-Array Values
+
+    * Implementation Limitations
+
+* "mailcap" --- Mailcap file handling
+
+* "mailbox" --- Manipulate mailboxes in various formats
+
+  * "Mailbox" objects
+
+    * "Maildir"
+
+    * "mbox"
+
+    * "MH"
+
+    * "Babyl"
+
+    * "MMDF"
+
+  * "Message" objects
+
+    * "MaildirMessage"
+
+    * "mboxMessage"
+
+    * "MHMessage"
+
+    * "BabylMessage"
+
+    * "MMDFMessage"
+
+  * Exceptions
+
+  * Deprecated classes and methods
+
+  * Examples
+
+* "mhlib" --- Access to MH mailboxes
+
+  * MH Objects
+
+  * Folder Objects
+
+  * Message Objects
+
+* "mimetools" --- Tools for parsing MIME messages
+
+  * Additional Methods of Message Objects
+
+* "mimetypes" --- Map filenames to MIME types
+
+  * MimeTypes Objects
+
+* "MimeWriter" --- Generic MIME file writer
+
+  * MimeWriter Objects
+
+* "mimify" --- MIME processing of mail messages
+
+* "multifile" --- Support for files containing distinct parts
+
+  * MultiFile Objects
+
+  * "MultiFile" Example
+
+* "rfc822" --- Parse RFC 2822 mail headers
+
+  * Message Objects
+
+  * AddressList Objects
+
+* "base64" --- RFC 3548: Base16, Base32, Base64 Data Encodings
+
+* "binhex" --- Encode and decode binhex4 files
+
+  * Notes
+
+* "binascii" --- Convert between binary and ASCII
+
+* "quopri" --- Encode and decode MIME quoted-printable data
+
+* "uu" --- Encode and decode uuencode files

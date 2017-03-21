@@ -1,0 +1,109 @@
+
+Data Persistence
+****************
+
+The modules described in this chapter support storing Python data in a
+persistent form on disk.  The "pickle" and "marshal" modules can turn
+many Python data types into a stream of bytes and then recreate the
+objects from the bytes.  The various DBM-related modules support a
+family of hash-based file formats that store a mapping of strings to
+other strings.  The "bsddb" module also provides such disk-based
+string-to-string mappings based on hashing, and also supports B-Tree
+and record-based formats.
+
+The list of modules described in this chapter is:
+
+* "pickle" --- Python object serialization
+
+  * Relationship to other Python modules
+
+  * Data stream format
+
+  * Usage
+
+  * What can be pickled and unpickled?
+
+  * The pickle protocol
+
+    * Pickling and unpickling normal class instances
+
+    * Pickling and unpickling extension types
+
+    * Pickling and unpickling external objects
+
+  * Subclassing Unpicklers
+
+  * Example
+
+* "cPickle" --- A faster "pickle"
+
+* "copy_reg" --- Register "pickle" support functions
+
+  * Example
+
+* "shelve" --- Python object persistence
+
+  * Restrictions
+
+  * Example
+
+* "marshal" --- Internal Python object serialization
+
+* "anydbm" --- Generic access to DBM-style databases
+
+* "whichdb" --- Guess which DBM module created a database
+
+* "dbm" --- Simple "database" interface
+
+* "gdbm" --- GNU's reinterpretation of dbm
+
+* "dbhash" --- DBM-style interface to the BSD database library
+
+  * Database Objects
+
+* "bsddb" --- Interface to Berkeley DB library
+
+  * Hash, BTree and Record Objects
+
+* "dumbdbm" --- Portable DBM implementation
+
+  * Dumbdbm Objects
+
+* "sqlite3" --- DB-API 2.0 interface for SQLite databases
+
+  * Module functions and constants
+
+  * Connection Objects
+
+  * Cursor Objects
+
+  * Row Objects
+
+  * SQLite and Python types
+
+    * Introduction
+
+    * Using adapters to store additional Python types in SQLite
+      databases
+
+      * Letting your object adapt itself
+
+      * Registering an adapter callable
+
+    * Converting SQLite values to custom Python types
+
+    * Default adapters and converters
+
+  * Controlling Transactions
+
+  * Using "sqlite3" efficiently
+
+    * Using shortcut methods
+
+    * Accessing columns by name instead of by index
+
+    * Using the connection as a context manager
+
+  * Common issues
+
+    * Multithreading

@@ -1,0 +1,121 @@
+
+Data Types
+**********
+
+The modules described in this chapter provide a variety of specialized
+data types such as dates and times, fixed-type arrays, heap queues,
+synchronized queues, and sets.
+
+Python also provides some built-in data types, in particular, "dict",
+"list", "set" (which along with "frozenset", replaces the deprecated
+"sets" module), and "tuple". The "str" class can be used to handle
+binary data and 8-bit text, and the "unicode" class to handle Unicode
+text.
+
+The following modules are documented in this chapter:
+
+* "datetime" --- Basic date and time types
+
+  * Available Types
+
+  * "timedelta" Objects
+
+  * "date" Objects
+
+  * "datetime" Objects
+
+  * "time" Objects
+
+  * "tzinfo" Objects
+
+  * "strftime()" and "strptime()" Behavior
+
+* "calendar" --- General calendar-related functions
+
+* "collections" --- High-performance container datatypes
+
+  * "Counter" objects
+
+  * "deque" objects
+
+    * "deque" Recipes
+
+  * "defaultdict" objects
+
+    * "defaultdict" Examples
+
+  * "namedtuple()" Factory Function for Tuples with Named Fields
+
+  * "OrderedDict" objects
+
+    * "OrderedDict" Examples and Recipes
+
+  * Collections Abstract Base Classes
+
+* "heapq" --- Heap queue algorithm
+
+  * Basic Examples
+
+  * Priority Queue Implementation Notes
+
+  * Theory
+
+* "bisect" --- Array bisection algorithm
+
+  * Searching Sorted Lists
+
+  * Other Examples
+
+* "array" --- Efficient arrays of numeric values
+
+* "sets" --- Unordered collections of unique elements
+
+  * Set Objects
+
+  * Example
+
+  * Protocol for automatic conversion to immutable
+
+  * Comparison to the built-in "set" types
+
+* "sched" --- Event scheduler
+
+  * Scheduler Objects
+
+* "mutex" --- Mutual exclusion support
+
+  * Mutex Objects
+
+* "Queue" --- A synchronized queue class
+
+  * Queue Objects
+
+* "weakref" --- Weak references
+
+  * Weak Reference Objects
+
+  * Example
+
+* "UserDict" --- Class wrapper for dictionary objects
+
+* "UserList" --- Class wrapper for list objects
+
+* "UserString" --- Class wrapper for string objects
+
+* "types" --- Names for built-in types
+
+* "new" --- Creation of runtime internal objects
+
+* "copy" --- Shallow and deep copy operations
+
+* "pprint" --- Data pretty printer
+
+  * PrettyPrinter Objects
+
+  * pprint Example
+
+* "repr" --- Alternate "repr()" implementation
+
+  * Repr Objects
+
+  * Subclassing Repr Objects

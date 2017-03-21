@@ -1,0 +1,90 @@
+
+Python Setup and Usage
+**********************
+
+This part of the documentation is devoted to general information on
+the setup of the Python environment on different platform, the
+invocation of the interpreter and things that make working with Python
+easier.
+
+* Command line and environment
+
+  * Command line
+
+    * Interface options
+
+    * Generic options
+
+    * Miscellaneous options
+
+    * Options you shouldn't use
+
+  * Environment variables
+
+    * Debug-mode variables
+
+* Using Python on Unix platforms
+
+  * Getting and installing the latest version of Python
+
+    * On Linux
+
+    * On FreeBSD and OpenBSD
+
+    * On OpenSolaris
+
+  * Building Python
+
+  * Python-related paths and files
+
+  * Miscellaneous
+
+  * Editors and IDEs
+
+* Using Python on Windows
+
+  * Installing Python
+
+  * Alternative bundles
+
+  * Configuring Python
+
+    * Excursus: Setting environment variables
+
+    * Finding the Python executable
+
+    * Finding modules
+
+    * Executing scripts
+
+  * Additional modules
+
+    * PyWin32
+
+    * Py2exe
+
+    * WConio
+
+  * Compiling Python on Windows
+
+  * Other resources
+
+* Using Python on a Macintosh
+
+  * Getting and Installing MacPython
+
+    * How to run a Python script
+
+    * Running scripts with a GUI
+
+    * Configuration
+
+  * The IDE
+
+  * Installing Additional Python Packages
+
+  * GUI Programming on the Mac
+
+  * Distributing Python Applications on the Mac
+
+  * Other Resources

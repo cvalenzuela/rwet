@@ -1,0 +1,129 @@
+
+Interprocess Communication and Networking
+*****************************************
+
+The modules described in this chapter provide mechanisms for different
+processes to communicate.
+
+Some modules only work for two processes that are on the same machine,
+e.g. "signal" and "subprocess".  Other modules support networking
+protocols that two or more processes can use to communicate across
+machines.
+
+The list of modules described in this chapter is:
+
+* "subprocess" --- Subprocess management
+
+  * Using the "subprocess" Module
+
+    * Frequently Used Arguments
+
+    * Popen Constructor
+
+    * Exceptions
+
+    * Security
+
+  * Popen Objects
+
+  * Windows Popen Helpers
+
+    * Constants
+
+  * Replacing Older Functions with the "subprocess" Module
+
+    * Replacing /bin/sh shell backquote
+
+    * Replacing shell pipeline
+
+    * Replacing "os.system()"
+
+    * Replacing the "os.spawn" family
+
+    * Replacing "os.popen()", "os.popen2()", "os.popen3()"
+
+    * Replacing functions from the "popen2" module
+
+  * Notes
+
+    * Converting an argument sequence to a string on Windows
+
+* "socket" --- Low-level networking interface
+
+  * Socket Objects
+
+  * Example
+
+* "ssl" --- TLS/SSL wrapper for socket objects
+
+  * Functions, Constants, and Exceptions
+
+    * Socket creation
+
+    * Context creation
+
+    * Random generation
+
+    * Certificate handling
+
+    * Constants
+
+  * SSL Sockets
+
+  * SSL Contexts
+
+  * Certificates
+
+    * Certificate chains
+
+    * CA certificates
+
+    * Combined key and certificate
+
+    * Self-signed certificates
+
+  * Examples
+
+    * Testing for SSL support
+
+    * Client-side operation
+
+    * Server-side operation
+
+  * Notes on non-blocking sockets
+
+  * Security considerations
+
+    * Best defaults
+
+    * Manual settings
+
+      * Verifying certificates
+
+      * Protocol versions
+
+      * Cipher selection
+
+    * Multi-processing
+
+* "signal" --- Set handlers for asynchronous events
+
+  * Example
+
+* "popen2" --- Subprocesses with accessible I/O streams
+
+  * Popen3 and Popen4 Objects
+
+  * Flow Control Issues
+
+* "asyncore" --- Asynchronous socket handler
+
+  * asyncore Example basic HTTP client
+
+  * asyncore Example basic echo server
+
+* "asynchat" --- Asynchronous socket command/response handler
+
+  * asynchat - Auxiliary Classes
+
+  * asynchat Example

@@ -1,0 +1,44 @@
+
+SGI IRIX Specific Services
+**************************
+
+The modules described in this chapter provide interfaces to features
+that are unique to SGI's IRIX operating system (versions 4 and 5).
+
+* "al" --- Audio functions on the SGI
+
+  * Configuration Objects
+
+  * Port Objects
+
+* "AL" --- Constants used with the "al" module
+
+* "cd" --- CD-ROM access on SGI systems
+
+  * Player Objects
+
+  * Parser Objects
+
+* "fl" --- FORMS library for graphical user interfaces
+
+  * Functions Defined in Module "fl"
+
+  * Form Objects
+
+  * FORMS Objects
+
+* "FL" --- Constants used with the "fl" module
+
+* "flp" --- Functions for loading stored FORMS designs
+
+* "fm" --- *Font Manager* interface
+
+* "gl" --- *Graphics Library* interface
+
+* "DEVICE" --- Constants used with the "gl" module
+
+* "GL" --- Constants used with the "gl" module
+
+* "imgfile" --- Support for SGI imglib files
+
+* "jpeg" --- Read and write JPEG files

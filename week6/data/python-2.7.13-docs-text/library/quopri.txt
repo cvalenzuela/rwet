@@ -1,0 +1,59 @@
+
+"quopri" --- Encode and decode MIME quoted-printable data
+*********************************************************
+
+**Source code:** Lib/quopri.py
+
+======================================================================
+
+This module performs quoted-printable transport encoding and decoding,
+as defined in **RFC 1521**: "MIME (Multipurpose Internet Mail
+Extensions) Part One: Mechanisms for Specifying and Describing the
+Format of Internet Message Bodies". The quoted-printable encoding is
+designed for data where there are relatively few nonprintable
+characters; the base64 encoding scheme available via the "base64"
+module is more compact if there are many such characters, as when
+sending a graphics file.
+
+quopri.decode(input, output[, header])
+
+   Decode the contents of the *input* file and write the resulting
+   decoded binary data to the *output* file. *input* and *output* must
+   either be file objects or objects that mimic the file object
+   interface. *input* will be read until "input.readline()" returns an
+   empty string. If the optional argument *header* is present and
+   true, underscore will be decoded as space. This is used to decode
+   "Q"-encoded headers as described in **RFC 1522**: "MIME
+   (Multipurpose Internet Mail Extensions) Part Two: Message Header
+   Extensions for Non-ASCII Text".
+
+quopri.encode(input, output, quotetabs)
+
+   Encode the contents of the *input* file and write the resulting
+   quoted-printable data to the *output* file. *input* and *output*
+   must either be file objects or objects that mimic the file object
+   interface. *input* will be read until "input.readline()" returns an
+   empty string. *quotetabs* is a flag which controls whether to
+   encode embedded spaces and tabs; when true it encodes such embedded
+   whitespace, and when false it leaves them unencoded.  Note that
+   spaces and tabs appearing at the end of lines are always encoded,
+   as per **RFC 1521**.
+
+quopri.decodestring(s[, header])
+
+   Like "decode()", except that it accepts a source string and returns
+   the corresponding decoded string.
+
+quopri.encodestring(s[, quotetabs])
+
+   Like "encode()", except that it accepts a source string and returns
+   the corresponding encoded string.  *quotetabs* is optional
+   (defaulting to 0), and is passed straight through to "encode()".
+
+See also:
+
+  Module "mimify"
+     General utilities for processing of MIME messages.
+
+  Module "base64"
+     Encode and decode MIME base64 data

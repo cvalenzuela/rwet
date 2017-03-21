@@ -1,0 +1,65 @@
+
+Method Objects
+**************
+
+There are some useful functions that are useful for working with
+method objects.
+
+PyTypeObject PyMethod_Type
+
+   This instance of "PyTypeObject" represents the Python method type.
+   This is exposed to Python programs as "types.MethodType".
+
+int PyMethod_Check(PyObject *o)
+
+   Return true if *o* is a method object (has type "PyMethod_Type").
+   The parameter must not be *NULL*.
+
+PyObject* PyMethod_New(PyObject *func, PyObject *self, PyObject *class)
+    *Return value: New reference.*
+
+   Return a new method object, with *func* being any callable object;
+   this is the function that will be called when the method is called.
+   If this method should be bound to an instance, *self* should be the
+   instance and *class* should be the class of *self*, otherwise
+   *self* should be *NULL* and *class* should be the class which
+   provides the unbound method..
+
+PyObject* PyMethod_Class(PyObject *meth)
+    *Return value: Borrowed reference.*
+
+   Return the class object from which the method *meth* was created;
+   if this was created from an instance, it will be the class of the
+   instance.
+
+PyObject* PyMethod_GET_CLASS(PyObject *meth)
+    *Return value: Borrowed reference.*
+
+   Macro version of "PyMethod_Class()" which avoids error checking.
+
+PyObject* PyMethod_Function(PyObject *meth)
+    *Return value: Borrowed reference.*
+
+   Return the function object associated with the method *meth*.
+
+PyObject* PyMethod_GET_FUNCTION(PyObject *meth)
+    *Return value: Borrowed reference.*
+
+   Macro version of "PyMethod_Function()" which avoids error checking.
+
+PyObject* PyMethod_Self(PyObject *meth)
+    *Return value: Borrowed reference.*
+
+   Return the instance associated with the method *meth* if it is
+   bound, otherwise return *NULL*.
+
+PyObject* PyMethod_GET_SELF(PyObject *meth)
+    *Return value: Borrowed reference.*
+
+   Macro version of "PyMethod_Self()" which avoids error checking.
+
+int PyMethod_ClearFreeList()
+
+   Clear the free list. Return the total number of freed items.
+
+   New in version 2.6.

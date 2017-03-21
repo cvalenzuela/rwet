@@ -1,0 +1,52 @@
+
+"fpformat" --- Floating point conversions
+*****************************************
+
+Deprecated since version 2.6: The "fpformat" module has been removed
+in Python 3.
+
+The "fpformat" module defines functions for dealing with floating
+point numbers representations in 100% pure Python.
+
+Note: This module is unnecessary: everything here can be done using
+  the "%" string interpolation operator described in the String
+  Formatting Operations section.
+
+The "fpformat" module defines the following functions and an
+exception:
+
+fpformat.fix(x, digs)
+
+   Format *x* as "[-]ddd.ddd" with *digs* digits after the point and
+   at least one digit before. If "digs <= 0", the decimal point is
+   suppressed.
+
+   *x* can be either a number or a string that looks like one. *digs*
+   is an integer.
+
+   Return value is a string.
+
+fpformat.sci(x, digs)
+
+   Format *x* as "[-]d.dddE[+-]ddd" with *digs* digits after the
+   point and exactly one digit before. If "digs <= 0", one digit is
+   kept and the point is suppressed.
+
+   *x* can be either a real number, or a string that looks like one.
+   *digs* is an integer.
+
+   Return value is a string.
+
+exception fpformat.NotANumber
+
+   Exception raised when a string passed to "fix()" or "sci()" as the
+   *x* parameter does not look like a number. This is a subclass of
+   "ValueError" when the standard exceptions are strings.  The
+   exception value is the improperly formatted string that caused the
+   exception to be raised.
+
+Example:
+
+   >>> import fpformat
+   >>> fpformat.fix(1.23, 1)
+   '1.2'

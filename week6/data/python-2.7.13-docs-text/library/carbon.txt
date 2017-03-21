@@ -1,0 +1,300 @@
+
+Mac OS Toolbox Modules
+**********************
+
+These are a set of modules that provide interfaces to various legacy
+Mac OS toolboxes. If applicable the module will define a number of
+Python objects for the various structures declared by the toolbox, and
+operations will be implemented as methods of the object.  Other
+operations will be implemented as functions in the module.  Not all
+operations possible in C will also be possible in Python (callbacks
+are often a problem), and parameters will occasionally be different in
+Python (input and output buffers, especially).  All methods and
+functions have a "__doc__" string describing their arguments and
+return values, and for additional description you are referred to
+Inside Macintosh or similar works.
+
+These modules all live in a package called "Carbon". Despite that name
+they are not all part of the Carbon framework: CF is really in the
+CoreFoundation framework and Qt is in the QuickTime framework. The
+normal use pattern is
+
+   from Carbon import AE
+
+Note: Most of the OS X APIs that these modules use are deprecated or
+  removed in recent versions of OS X.  Many are not available when
+  Python is executing in 64-bit mode.  The Carbon modules have been
+  removed in Python 3.  You should avoid using them in Python 2.
+
+
+"Carbon.AE" --- Apple Events
+============================
+
+
+"Carbon.AH" --- Apple Help
+==========================
+
+
+"Carbon.App" --- Appearance Manager
+===================================
+
+
+"Carbon.Appearance" --- Appearance Manager constants
+====================================================
+
+
+"Carbon.CF" --- Core Foundation
+===============================
+
+The "CFBase", "CFArray", "CFData", "CFDictionary", "CFString" and
+"CFURL" objects are supported, some only partially.
+
+
+"Carbon.CG" --- Core Graphics
+=============================
+
+
+"Carbon.CarbonEvt" --- Carbon Event Manager
+===========================================
+
+
+"Carbon.CarbonEvents" --- Carbon Event Manager constants
+========================================================
+
+
+"Carbon.Cm" --- Component Manager
+=================================
+
+
+"Carbon.Components" --- Component Manager constants
+===================================================
+
+
+"Carbon.ControlAccessor" --- Control Manager accssors
+=====================================================
+
+
+"Carbon.Controls" --- Control Manager constants
+===============================================
+
+
+"Carbon.CoreFounation" --- CoreFounation constants
+==================================================
+
+
+"Carbon.CoreGraphics" --- CoreGraphics constants
+================================================
+
+
+"Carbon.Ctl" --- Control Manager
+================================
+
+
+"Carbon.Dialogs" --- Dialog Manager constants
+=============================================
+
+
+"Carbon.Dlg" --- Dialog Manager
+===============================
+
+
+"Carbon.Drag" --- Drag and Drop Manager
+=======================================
+
+
+"Carbon.Dragconst" --- Drag and Drop Manager constants
+======================================================
+
+
+"Carbon.Events" --- Event Manager constants
+===========================================
+
+
+"Carbon.Evt" --- Event Manager
+==============================
+
+
+"Carbon.File" --- File Manager
+==============================
+
+
+"Carbon.Files" --- File Manager constants
+=========================================
+
+
+"Carbon.Fm" --- Font Manager
+============================
+
+
+"Carbon.Folder" --- Folder Manager
+==================================
+
+
+"Carbon.Folders" --- Folder Manager constants
+=============================================
+
+
+"Carbon.Fonts" --- Font Manager constants
+=========================================
+
+
+"Carbon.Help" --- Help Manager
+==============================
+
+
+"Carbon.IBCarbon" --- Carbon InterfaceBuilder
+=============================================
+
+
+"Carbon.IBCarbonRuntime" --- Carbon InterfaceBuilder constants
+==============================================================
+
+
+"Carbon.Icn" --- Carbon Icon Manager
+====================================
+
+
+"Carbon.Icons" --- Carbon Icon Manager constants
+================================================
+
+
+"Carbon.Launch" --- Carbon Launch Services
+==========================================
+
+
+"Carbon.LaunchServices" --- Carbon Launch Services constants
+============================================================
+
+
+"Carbon.List" --- List Manager
+==============================
+
+
+"Carbon.Lists" --- List Manager constants
+=========================================
+
+
+"Carbon.MacHelp" --- Help Manager constants
+===========================================
+
+
+"Carbon.MediaDescr" --- Parsers and generators for Quicktime Media descriptors
+==============================================================================
+
+
+"Carbon.Menu" --- Menu Manager
+==============================
+
+
+"Carbon.Menus" --- Menu Manager constants
+=========================================
+
+
+"Carbon.Mlte" --- MultiLingual Text Editor
+==========================================
+
+
+"Carbon.OSA" --- Carbon OSA Interface
+=====================================
+
+
+"Carbon.OSAconst" --- Carbon OSA Interface constants
+====================================================
+
+
+"Carbon.QDOffscreen" --- QuickDraw Offscreen constants
+======================================================
+
+
+"Carbon.Qd" --- QuickDraw
+=========================
+
+
+"Carbon.Qdoffs" --- QuickDraw Offscreen
+=======================================
+
+
+"Carbon.Qt" --- QuickTime
+=========================
+
+
+"Carbon.QuickDraw" --- QuickDraw constants
+==========================================
+
+
+"Carbon.QuickTime" --- QuickTime constants
+==========================================
+
+
+"Carbon.Res" --- Resource Manager and Handles
+=============================================
+
+
+"Carbon.Resources" --- Resource Manager and Handles constants
+=============================================================
+
+
+"Carbon.Scrap" --- Scrap Manager
+================================
+
+This module is only fully available on Mac OS 9 and earlier under
+classic PPC MacPython.  Very limited functionality is available under
+Carbon MacPython.
+
+The Scrap Manager supports the simplest form of cut & paste operations
+on the Macintosh.  It can be use for both inter- and intra-application
+clipboard operations.
+
+The "Scrap" module provides low-level access to the functions of the
+Scrap Manager.  It contains the following functions:
+
+Carbon.Scrap.InfoScrap()
+
+   Return current information about the scrap.  The information is
+   encoded as a tuple containing the fields "(size, handle, count,
+   state, path)".
+
+   +------------+-----------------------------------------------+
+   | Field      | Meaning                                       |
+   +============+===============================================+
+   | *size*     | Size of the scrap in bytes.                   |
+   +------------+-----------------------------------------------+
+   | *handle*   | Resource object representing the scrap.       |
+   +------------+-----------------------------------------------+
+   | *count*    | Serial number of the scrap contents.          |
+   +------------+-----------------------------------------------+
+   | *state*    | Integer; positive if in memory, "0" if on     |
+   |            | disk, negative if uninitialized.              |
+   +------------+-----------------------------------------------+
+   | *path*     | Filename of the scrap when stored on disk.    |
+   +------------+-----------------------------------------------+
+
+See also:
+
+  Scrap Manager
+     Apple's documentation for the Scrap Manager gives a lot of useful
+     information about using the Scrap Manager in applications.
+
+
+"Carbon.Snd" --- Sound Manager
+==============================
+
+
+"Carbon.Sound" --- Sound Manager constants
+==========================================
+
+
+"Carbon.TE" --- TextEdit
+========================
+
+
+"Carbon.TextEdit" --- TextEdit constants
+========================================
+
+
+"Carbon.Win" --- Window Manager
+===============================
+
+
+"Carbon.Windows" --- Window Manager constants
+=============================================

@@ -1,0 +1,85 @@
+
+Extending and Embedding the Python Interpreter
+**********************************************
+
+This document describes how to write modules in C or C++ to extend the
+Python interpreter with new modules.  Those modules can not only
+define new functions but also new object types and their methods.  The
+document also describes how to embed the Python interpreter in another
+application, for use as an extension language.  Finally, it shows how
+to compile and link extension modules so that they can be loaded
+dynamically (at run time) into the interpreter, if the underlying
+operating system supports this feature.
+
+This document assumes basic knowledge about Python.  For an informal
+introduction to the language, see The Python Tutorial.  The Python
+Language Reference gives a more formal definition of the language.
+The Python Standard Library documents the existing object types,
+functions and modules (both built-in and written in Python) that give
+the language its wide application range.
+
+For a detailed description of the whole Python/C API, see the separate
+Python/C API Reference Manual.
+
+Note: This guide only covers the basic tools for creating extensions
+  provided as part of this version of CPython. Third party tools may
+  offer simpler alternatives. Refer to the binary extensions section
+  in the Python Packaging User Guide for more information.
+
+* Extending Python with C or C++
+
+  * A Simple Example
+
+  * Intermezzo: Errors and Exceptions
+
+  * Back to the Example
+
+  * The Module's Method Table and Initialization Function
+
+  * Compilation and Linkage
+
+  * Calling Python Functions from C
+
+  * Extracting Parameters in Extension Functions
+
+  * Keyword Parameters for Extension Functions
+
+  * Building Arbitrary Values
+
+  * Reference Counts
+
+  * Writing Extensions in C++
+
+  * Providing a C API for an Extension Module
+
+* Defining New Types
+
+  * The Basics
+
+  * Type Methods
+
+* Building C and C++ Extensions with distutils
+
+  * Distributing your extension modules
+
+* Building C and C++ Extensions on Windows
+
+  * A Cookbook Approach
+
+  * Differences Between Unix and Windows
+
+  * Using DLLs in Practice
+
+* Embedding Python in Another Application
+
+  * Very High Level Embedding
+
+  * Beyond Very High Level Embedding: An overview
+
+  * Pure Embedding
+
+  * Extending Embedded Python
+
+  * Embedding Python in C++
+
+  * Compiling and Linking under Unix-like systems

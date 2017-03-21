@@ -1,0 +1,6 @@
+
+Uploading Packages to the Package Index
+***************************************
+
+The contents of this page have moved to the section The Python Package
+Index (PyPI).

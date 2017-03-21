@@ -1,0 +1,23 @@
+
+Command Reference
+*****************
+
+
+Installing modules: the **install** command family
+==================================================
+
+The install command ensures that the build commands have been run and
+then runs the subcommands **install_lib**, **install_data** and
+**install_scripts**.
+
+
+**install_data**
+----------------
+
+This command installs all data files provided with the distribution.
+
+
+**install_scripts**
+-------------------
+
+This command installs all (Python) scripts in the distribution.

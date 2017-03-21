@@ -1,0 +1,59 @@
+
+"xml.dom.pulldom" --- Support for building partial DOM trees
+************************************************************
+
+New in version 2.0.
+
+**Source code:** Lib/xml/dom/pulldom.py
+
+======================================================================
+
+"xml.dom.pulldom" allows building only selected portions of a Document
+Object Model representation of a document from SAX events.
+
+Warning: The "xml.dom.pulldom" module is not secure against
+  maliciously constructed data.  If you need to parse untrusted or
+  unauthenticated data see XML vulnerabilities.
+
+class xml.dom.pulldom.PullDOM([documentFactory])
+
+   "xml.sax.handler.ContentHandler" implementation that ...
+
+class xml.dom.pulldom.DOMEventStream(stream, parser, bufsize)
+
+   ...
+
+class xml.dom.pulldom.SAX2DOM([documentFactory])
+
+   "xml.sax.handler.ContentHandler" implementation that ...
+
+xml.dom.pulldom.parse(stream_or_string[, parser[, bufsize]])
+
+   ...
+
+xml.dom.pulldom.parseString(string[, parser])
+
+   ...
+
+xml.dom.pulldom.default_bufsize
+
+   Default value for the *bufsize* parameter to "parse()".
+
+   Changed in version 2.1: The value of this variable can be changed
+   before calling "parse()" and the new value will take effect.
+
+
+DOMEventStream Objects
+======================
+
+DOMEventStream.getEvent()
+
+   ...
+
+DOMEventStream.expandNode(node)
+
+   ...
+
+DOMEventStream.reset()
+
+   ...

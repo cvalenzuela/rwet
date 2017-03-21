@@ -1,0 +1,191 @@
+
+"bz2" --- Compression compatible with **bzip2**
+***********************************************
+
+New in version 2.3.
+
+This module provides a comprehensive interface for the bz2 compression
+library. It implements a complete file interface, one-shot
+(de)compression functions, and types for sequential (de)compression.
+
+Here is a summary of the features offered by the bz2 module:
+
+* "BZ2File" class implements a complete file interface, including
+  "readline()", "readlines()", "writelines()", "seek()", etc;
+
+* "BZ2File" class implements emulated "seek()" support;
+
+* "BZ2File" class implements universal newline support;
+
+* "BZ2File" class offers an optimized line iteration using the
+  readahead algorithm borrowed from file objects;
+
+* Sequential (de)compression supported by "BZ2Compressor" and
+  "BZ2Decompressor" classes;
+
+* One-shot (de)compression supported by "compress()" and
+  "decompress()" functions;
+
+* Thread safety uses individual locking mechanism.
+
+
+(De)compression of files
+========================
+
+Handling of compressed files is offered by the "BZ2File" class.
+
+class bz2.BZ2File(filename[, mode[, buffering[, compresslevel]]])
+
+   Open a bz2 file. Mode can be either "'r'" or "'w'", for reading
+   (default) or writing. When opened for writing, the file will be
+   created if it doesn't exist, and truncated otherwise. If
+   *buffering* is given, "0" means unbuffered, and larger numbers
+   specify the buffer size; the default is "0". If *compresslevel* is
+   given, it must be a number between "1" and "9"; the default is "9".
+   Add a "'U'" to mode to open the file for input in *universal
+   newlines* mode. Any line ending in the input file will be seen as a
+   "'\n'" in Python.  Also, a file so opened gains the attribute
+   "newlines"; the value for this attribute is one of "None" (no
+   newline read yet), "'\r'", "'\n'", "'\r\n'" or a tuple containing
+   all the newline types seen. Universal newlines are available only
+   when reading. Instances support iteration in the same way as normal
+   "file" instances.
+
+   "BZ2File" supports the "with" statement.
+
+   Changed in version 2.7: Support for the "with" statement was added.
+
+   Note: This class does not support input files containing multiple
+     streams (such as those produced by the **pbzip2** tool). When
+     reading such an input file, only the first stream will be
+     accessible. If you require support for multi-stream files,
+     consider using the third-party "bz2file" module (available from
+     PyPI). This module provides a backport of Python 3.3's "BZ2File"
+     class, which does support multi-stream files.
+
+   close()
+
+      Close the file. Sets data attribute "closed" to true. A closed
+      file cannot be used for further I/O operations. "close()" may be
+      called more than once without error.
+
+   read([size])
+
+      Read at most *size* uncompressed bytes, returned as a string. If
+      the *size* argument is negative or omitted, read until EOF is
+      reached.
+
+   readline([size])
+
+      Return the next line from the file, as a string, retaining
+      newline. A non-negative *size* argument limits the maximum
+      number of bytes to return (an incomplete line may be returned
+      then). Return an empty string at EOF.
+
+   readlines([size])
+
+      Return a list of lines read. The optional *size* argument, if
+      given, is an approximate bound on the total number of bytes in
+      the lines returned.
+
+   xreadlines()
+
+      For backward compatibility. "BZ2File" objects now include the
+      performance optimizations previously implemented in the
+      "xreadlines" module.
+
+      Deprecated since version 2.3: This exists only for compatibility
+      with the method by this name on "file" objects, which is
+      deprecated.  Use "for line in file" instead.
+
+   seek(offset[, whence])
+
+      Move to new file position. Argument *offset* is a byte count.
+      Optional argument *whence* defaults to "os.SEEK_SET" or "0"
+      (offset from start of file; offset should be ">= 0"); other
+      values are "os.SEEK_CUR" or "1" (move relative to current
+      position; offset can be positive or negative), and "os.SEEK_END"
+      or "2" (move relative to end of file; offset is usually
+      negative, although many platforms allow seeking beyond the end
+      of a file).
+
+      Note that seeking of bz2 files is emulated, and depending on the
+      parameters the operation may be extremely slow.
+
+   tell()
+
+      Return the current file position, an integer (may be a long
+      integer).
+
+   write(data)
+
+      Write string *data* to file. Note that due to buffering,
+      "close()" may be needed before the file on disk reflects the
+      data written.
+
+   writelines(sequence_of_strings)
+
+      Write the sequence of strings to the file. Note that newlines
+      are not added. The sequence can be any iterable object producing
+      strings. This is equivalent to calling write() for each string.
+
+
+Sequential (de)compression
+==========================
+
+Sequential compression and decompression is done using the classes
+"BZ2Compressor" and "BZ2Decompressor".
+
+class bz2.BZ2Compressor([compresslevel])
+
+   Create a new compressor object. This object may be used to compress
+   data sequentially. If you want to compress data in one shot, use
+   the "compress()" function instead. The *compresslevel* parameter,
+   if given, must be a number between "1" and "9"; the default is "9".
+
+   compress(data)
+
+      Provide more data to the compressor object. It will return
+      chunks of compressed data whenever possible. When you've
+      finished providing data to compress, call the "flush()" method
+      to finish the compression process, and return what is left in
+      internal buffers.
+
+   flush()
+
+      Finish the compression process and return what is left in
+      internal buffers. You must not use the compressor object after
+      calling this method.
+
+class bz2.BZ2Decompressor
+
+   Create a new decompressor object. This object may be used to
+   decompress data sequentially. If you want to decompress data in one
+   shot, use the "decompress()" function instead.
+
+   decompress(data)
+
+      Provide more data to the decompressor object. It will return
+      chunks of decompressed data whenever possible. If you try to
+      decompress data after the end of stream is found, "EOFError"
+      will be raised. If any data was found after the end of stream,
+      it'll be ignored and saved in "unused_data" attribute.
+
+
+One-shot (de)compression
+========================
+
+One-shot compression and decompression is provided through the
+"compress()" and "decompress()" functions.
+
+bz2.compress(data[, compresslevel])
+
+   Compress *data* in one shot. If you want to compress data
+   sequentially, use an instance of "BZ2Compressor" instead. The
+   *compresslevel* parameter, if given, must be a number between "1"
+   and "9"; the default is "9".
+
+bz2.decompress(data)
+
+   Decompress *data* in one shot. If you want to decompress data
+   sequentially, use an instance of "BZ2Decompressor" instead.

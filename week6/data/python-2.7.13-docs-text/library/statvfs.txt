@@ -1,0 +1,52 @@
+
+"statvfs" --- Constants used with "os.statvfs()"
+************************************************
+
+Deprecated since version 2.6: The "statvfs" module has been removed in
+Python 3.
+
+The "statvfs" module defines constants so interpreting the result if
+"os.statvfs()", which returns a tuple, can be made without remembering
+"magic numbers."  Each of the constants defined in this module is the
+*index* of the entry in the tuple returned by "os.statvfs()" that
+contains the specified information.
+
+statvfs.F_BSIZE
+
+   Preferred file system block size.
+
+statvfs.F_FRSIZE
+
+   Fundamental file system block size.
+
+statvfs.F_BLOCKS
+
+   Total number of blocks in the filesystem.
+
+statvfs.F_BFREE
+
+   Total number of free blocks.
+
+statvfs.F_BAVAIL
+
+   Free blocks available to non-super user.
+
+statvfs.F_FILES
+
+   Total number of file nodes.
+
+statvfs.F_FFREE
+
+   Total number of free file nodes.
+
+statvfs.F_FAVAIL
+
+   Free nodes available to non-super user.
+
+statvfs.F_FLAG
+
+   Flags. System dependent: see "statvfs()" man page.
+
+statvfs.F_NAMEMAX
+
+   Maximum file name length.

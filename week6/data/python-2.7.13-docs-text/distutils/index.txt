@@ -1,0 +1,213 @@
+
+Distributing Python Modules (Legacy version)
+********************************************
+
+Authors:
+   Greg Ward, Anthony Baxter
+
+Email:
+   distutils-sig@python.org
+
+See also:
+
+  Distributing Python Modules
+     The up to date module distribution documentations
+
+This document describes the Python Distribution Utilities
+("Distutils") from the module developer's point of view, describing
+how to use the Distutils to make Python modules and extensions easily
+available to a wider audience with very little overhead for
+build/release/install mechanics.
+
+Note: This guide only covers the basic tools for building and
+  distributing extensions that are provided as part of this version of
+  Python. Third party tools offer easier to use and more secure
+  alternatives. Refer to the quick recommendations section in the
+  Python Packaging User Guide for more information.
+
+* An Introduction to Distutils
+
+  * Concepts & Terminology
+
+  * A Simple Example
+
+  * General Python terminology
+
+  * Distutils-specific terminology
+
+* Writing the Setup Script
+
+  * Listing whole packages
+
+  * Listing individual modules
+
+  * Describing extension modules
+
+  * Relationships between Distributions and Packages
+
+  * Installing Scripts
+
+  * Installing Package Data
+
+  * Installing Additional Files
+
+  * Additional meta-data
+
+  * Debugging the setup script
+
+* Writing the Setup Configuration File
+
+* Creating a Source Distribution
+
+  * Specifying the files to distribute
+
+  * Manifest-related options
+
+  * The MANIFEST.in template
+
+* Creating Built Distributions
+
+  * Creating dumb built distributions
+
+  * Creating RPM packages
+
+  * Creating Windows Installers
+
+  * Cross-compiling on Windows
+
+  * Vista User Access Control (UAC)
+
+* The Python Package Index (PyPI)
+
+  * PyPI overview
+
+  * Distutils commands
+
+  * PyPI package display
+
+* Examples
+
+  * Pure Python distribution (by module)
+
+  * Pure Python distribution (by package)
+
+  * Single extension module
+
+* Extending Distutils
+
+  * Integrating new commands
+
+  * Adding new distribution types
+
+* Command Reference
+
+  * Installing modules: the **install** command family
+
+* API Reference
+
+  * "distutils.core" --- Core Distutils functionality
+
+  * "distutils.ccompiler" --- CCompiler base class
+
+  * "distutils.unixccompiler" --- Unix C Compiler
+
+  * "distutils.msvccompiler" --- Microsoft Compiler
+
+  * "distutils.bcppcompiler" --- Borland Compiler
+
+  * "distutils.cygwincompiler" --- Cygwin Compiler
+
+  * "distutils.emxccompiler" --- OS/2 EMX Compiler
+
+  * "distutils.archive_util" ---  Archiving utilities
+
+  * "distutils.dep_util" --- Dependency checking
+
+  * "distutils.dir_util" --- Directory tree operations
+
+  * "distutils.file_util" --- Single file operations
+
+  * "distutils.util" --- Miscellaneous other utility functions
+
+  * "distutils.dist" --- The Distribution class
+
+  * "distutils.extension" --- The Extension class
+
+  * "distutils.debug" --- Distutils debug mode
+
+  * "distutils.errors" --- Distutils exceptions
+
+  * "distutils.fancy_getopt" --- Wrapper around the standard getopt
+    module
+
+  * "distutils.filelist" --- The FileList class
+
+  * "distutils.log" --- Simple PEP 282-style logging
+
+  * "distutils.spawn" --- Spawn a sub-process
+
+  * "distutils.sysconfig" --- System configuration information
+
+  * "distutils.text_file" --- The TextFile class
+
+  * "distutils.version" --- Version number classes
+
+  * "distutils.cmd" --- Abstract base class for Distutils commands
+
+  * Creating a new Distutils command
+
+  * "distutils.command" --- Individual Distutils commands
+
+  * "distutils.command.bdist" --- Build a binary installer
+
+  * "distutils.command.bdist_packager" --- Abstract base class for
+    packagers
+
+  * "distutils.command.bdist_dumb" --- Build a "dumb" installer
+
+  * "distutils.command.bdist_msi" --- Build a Microsoft Installer
+    binary package
+
+  * "distutils.command.bdist_rpm" --- Build a binary distribution as
+    a Redhat RPM and SRPM
+
+  * "distutils.command.bdist_wininst" --- Build a Windows installer
+
+  * "distutils.command.sdist" --- Build a source distribution
+
+  * "distutils.command.build" --- Build all files of a package
+
+  * "distutils.command.build_clib" --- Build any C libraries in a
+    package
+
+  * "distutils.command.build_ext" --- Build any extensions in a
+    package
+
+  * "distutils.command.build_py" --- Build the .py/.pyc files of a
+    package
+
+  * "distutils.command.build_scripts" --- Build the scripts of a
+    package
+
+  * "distutils.command.clean" --- Clean a package build area
+
+  * "distutils.command.config" --- Perform package configuration
+
+  * "distutils.command.install" --- Install a package
+
+  * "distutils.command.install_data" --- Install data files from a
+    package
+
+  * "distutils.command.install_headers" --- Install C/C++ header
+    files from a package
+
+  * "distutils.command.install_lib" --- Install library files from a
+    package
+
+  * "distutils.command.install_scripts" --- Install script files
+    from a package
+
+  * "distutils.command.register" --- Register a module with the
+    Python Package Index
+
+  * "distutils.command.check" --- Check the meta-data of a package

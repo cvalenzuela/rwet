@@ -1,0 +1,110 @@
+
+Development Tools
+*****************
+
+The modules described in this chapter help you write software.  For
+example, the "pydoc" module takes a module and generates documentation
+based on the module's contents.  The "doctest" and "unittest" modules
+contains frameworks for writing unit tests that automatically exercise
+code and verify that the expected output is produced.  **2to3** can
+translate Python 2.x source code into valid Python 3.x code.
+
+The list of modules described in this chapter is:
+
+* "pydoc" --- Documentation generator and online help system
+
+* "doctest" --- Test interactive Python examples
+
+  * Simple Usage: Checking Examples in Docstrings
+
+  * Simple Usage: Checking Examples in a Text File
+
+  * How It Works
+
+    * Which Docstrings Are Examined?
+
+    * How are Docstring Examples Recognized?
+
+    * What's the Execution Context?
+
+    * What About Exceptions?
+
+    * Option Flags
+
+    * Directives
+
+    * Warnings
+
+  * Basic API
+
+  * Unittest API
+
+  * Advanced API
+
+    * DocTest Objects
+
+    * Example Objects
+
+    * DocTestFinder objects
+
+    * DocTestParser objects
+
+    * DocTestRunner objects
+
+    * OutputChecker objects
+
+  * Debugging
+
+  * Soapbox
+
+* "unittest" --- Unit testing framework
+
+  * Basic example
+
+  * Command-Line Interface
+
+    * Command-line options
+
+  * Test Discovery
+
+  * Organizing test code
+
+  * Re-using old test code
+
+  * Skipping tests and expected failures
+
+  * Classes and functions
+
+    * Test cases
+
+      * Deprecated aliases
+
+    * Grouping tests
+
+    * Loading and running tests
+
+      * load_tests Protocol
+
+  * Class and Module Fixtures
+
+    * setUpClass and tearDownClass
+
+    * setUpModule and tearDownModule
+
+  * Signal Handling
+
+* 2to3 - Automated Python 2 to 3 code translation
+
+  * Using 2to3
+
+  * Fixers
+
+  * "lib2to3" - 2to3's library
+
+* "test" --- Regression tests package for Python
+
+  * Writing Unit Tests for the "test" package
+
+  * Running tests using the command-line interface
+
+* "test.test_support" --- Utility functions for tests

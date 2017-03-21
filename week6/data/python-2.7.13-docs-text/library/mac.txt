@@ -1,0 +1,164 @@
+
+Mac OS X specific services
+**************************
+
+This chapter describes modules that are only available on the Mac OS X
+platform.
+
+See the chapters MacPython OSA Modules and Undocumented Mac OS modules
+for more modules, and the HOWTO Using Python on a Macintosh for a
+general introduction to Mac-specific Python programming.
+
+Note: Most of the OS X APIs that these modules use are deprecated or
+  removed in recent versions of OS X.  Many are not available when
+  Python is executing in 64-bit mode.  These modules have been removed
+  in Python 3.  You should avoid using them in Python 2.
+
+* "ic" --- Access to the Mac OS X Internet Config
+
+  * IC Objects
+
+* "MacOS" --- Access to Mac OS interpreter features
+
+* "macostools" --- Convenience routines for file manipulation
+
+* "findertools" --- The **finder**'s Apple Events interface
+
+* "EasyDialogs" --- Basic Macintosh dialogs
+
+  * ProgressBar Objects
+
+* "FrameWork" --- Interactive application framework
+
+  * Application Objects
+
+  * Window Objects
+
+  * ControlsWindow Object
+
+  * ScrolledWindow Object
+
+  * DialogWindow Objects
+
+* "autoGIL" --- Global Interpreter Lock handling in event loops
+
+* Mac OS Toolbox Modules
+
+  * "Carbon.AE" --- Apple Events
+
+  * "Carbon.AH" --- Apple Help
+
+  * "Carbon.App" --- Appearance Manager
+
+  * "Carbon.Appearance" --- Appearance Manager constants
+
+  * "Carbon.CF" --- Core Foundation
+
+  * "Carbon.CG" --- Core Graphics
+
+  * "Carbon.CarbonEvt" --- Carbon Event Manager
+
+  * "Carbon.CarbonEvents" --- Carbon Event Manager constants
+
+  * "Carbon.Cm" --- Component Manager
+
+  * "Carbon.Components" --- Component Manager constants
+
+  * "Carbon.ControlAccessor" --- Control Manager accssors
+
+  * "Carbon.Controls" --- Control Manager constants
+
+  * "Carbon.CoreFounation" --- CoreFounation constants
+
+  * "Carbon.CoreGraphics" --- CoreGraphics constants
+
+  * "Carbon.Ctl" --- Control Manager
+
+  * "Carbon.Dialogs" --- Dialog Manager constants
+
+  * "Carbon.Dlg" --- Dialog Manager
+
+  * "Carbon.Drag" --- Drag and Drop Manager
+
+  * "Carbon.Dragconst" --- Drag and Drop Manager constants
+
+  * "Carbon.Events" --- Event Manager constants
+
+  * "Carbon.Evt" --- Event Manager
+
+  * "Carbon.File" --- File Manager
+
+  * "Carbon.Files" --- File Manager constants
+
+  * "Carbon.Fm" --- Font Manager
+
+  * "Carbon.Folder" --- Folder Manager
+
+  * "Carbon.Folders" --- Folder Manager constants
+
+  * "Carbon.Fonts" --- Font Manager constants
+
+  * "Carbon.Help" --- Help Manager
+
+  * "Carbon.IBCarbon" --- Carbon InterfaceBuilder
+
+  * "Carbon.IBCarbonRuntime" --- Carbon InterfaceBuilder constants
+
+  * "Carbon.Icn" --- Carbon Icon Manager
+
+  * "Carbon.Icons" --- Carbon Icon Manager constants
+
+  * "Carbon.Launch" --- Carbon Launch Services
+
+  * "Carbon.LaunchServices" --- Carbon Launch Services constants
+
+  * "Carbon.List" --- List Manager
+
+  * "Carbon.Lists" --- List Manager constants
+
+  * "Carbon.MacHelp" --- Help Manager constants
+
+  * "Carbon.MediaDescr" --- Parsers and generators for Quicktime
+    Media descriptors
+
+  * "Carbon.Menu" --- Menu Manager
+
+  * "Carbon.Menus" --- Menu Manager constants
+
+  * "Carbon.Mlte" --- MultiLingual Text Editor
+
+  * "Carbon.OSA" --- Carbon OSA Interface
+
+  * "Carbon.OSAconst" --- Carbon OSA Interface constants
+
+  * "Carbon.QDOffscreen" --- QuickDraw Offscreen constants
+
+  * "Carbon.Qd" --- QuickDraw
+
+  * "Carbon.Qdoffs" --- QuickDraw Offscreen
+
+  * "Carbon.Qt" --- QuickTime
+
+  * "Carbon.QuickDraw" --- QuickDraw constants
+
+  * "Carbon.QuickTime" --- QuickTime constants
+
+  * "Carbon.Res" --- Resource Manager and Handles
+
+  * "Carbon.Resources" --- Resource Manager and Handles constants
+
+  * "Carbon.Scrap" --- Scrap Manager
+
+  * "Carbon.Snd" --- Sound Manager
+
+  * "Carbon.Sound" --- Sound Manager constants
+
+  * "Carbon.TE" --- TextEdit
+
+  * "Carbon.TextEdit" --- TextEdit constants
+
+  * "Carbon.Win" --- Window Manager
+
+  * "Carbon.Windows" --- Window Manager constants
+
+* "ColorPicker" --- Color selection dialog

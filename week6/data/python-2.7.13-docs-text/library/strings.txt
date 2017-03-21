@@ -1,0 +1,127 @@
+
+String Services
+***************
+
+The modules described in this chapter provide a wide range of string
+manipulation operations.
+
+In addition, Python's built-in string classes support the sequence
+type methods described in the Sequence Types --- str, unicode, list,
+tuple, bytearray, buffer, xrange section, and also the string-specific
+methods described in the String Methods section. To output formatted
+strings use template strings or the "%" operator described in the
+String Formatting Operations section. Also, see the "re" module for
+string functions based on regular expressions.
+
+* "string" --- Common string operations
+
+  * String constants
+
+  * Custom String Formatting
+
+  * Format String Syntax
+
+    * Format Specification Mini-Language
+
+    * Format examples
+
+  * Template strings
+
+  * String functions
+
+  * Deprecated string functions
+
+* "re" --- Regular expression operations
+
+  * Regular Expression Syntax
+
+  * Module Contents
+
+  * Regular Expression Objects
+
+  * Match Objects
+
+  * Examples
+
+    * Checking For a Pair
+
+    * Simulating scanf()
+
+    * search() vs. match()
+
+    * Making a Phonebook
+
+    * Text Munging
+
+    * Finding all Adverbs
+
+    * Finding all Adverbs and their Positions
+
+    * Raw String Notation
+
+* "struct" --- Interpret strings as packed binary data
+
+  * Functions and Exceptions
+
+  * Format Strings
+
+    * Byte Order, Size, and Alignment
+
+    * Format Characters
+
+    * Examples
+
+  * Classes
+
+* "difflib" --- Helpers for computing deltas
+
+  * SequenceMatcher Objects
+
+  * SequenceMatcher Examples
+
+  * Differ Objects
+
+  * Differ Example
+
+  * A command-line interface to difflib
+
+* "StringIO" --- Read and write strings as files
+
+* "cStringIO" --- Faster version of "StringIO"
+
+* "textwrap" --- Text wrapping and filling
+
+* "codecs" --- Codec registry and base classes
+
+  * Codec Base Classes
+
+    * Codec Objects
+
+    * IncrementalEncoder Objects
+
+    * IncrementalDecoder Objects
+
+    * StreamWriter Objects
+
+    * StreamReader Objects
+
+    * StreamReaderWriter Objects
+
+    * StreamRecoder Objects
+
+  * Encodings and Unicode
+
+  * Standard Encodings
+
+  * Python Specific Encodings
+
+  * "encodings.idna" --- Internationalized Domain Names in
+    Applications
+
+  * "encodings.utf_8_sig" --- UTF-8 codec with BOM signature
+
+* "unicodedata" --- Unicode Database
+
+* "stringprep" --- Internet String Preparation
+
+* "fpformat" --- Floating point conversions

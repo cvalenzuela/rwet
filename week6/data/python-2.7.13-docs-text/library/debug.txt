@@ -1,0 +1,63 @@
+
+Debugging and Profiling
+***********************
+
+These libraries help you with Python development: the debugger enables
+you to step through code, analyze stack frames and set breakpoints
+etc., and the profilers run code and give you a detailed breakdown of
+execution times, allowing you to identify bottlenecks in your
+programs.
+
+* "bdb" --- Debugger framework
+
+* "pdb" --- The Python Debugger
+
+* Debugger Commands
+
+* The Python Profilers
+
+  * Introduction to the profilers
+
+  * Instant User's Manual
+
+  * "profile" and "cProfile" Module Reference
+
+  * The "Stats" Class
+
+  * What Is Deterministic Profiling?
+
+  * Limitations
+
+  * Calibration
+
+  * Using a custom timer
+
+* "hotshot" --- High performance logging profiler
+
+  * Profile Objects
+
+  * Using hotshot data
+
+  * Example Usage
+
+* "timeit" --- Measure execution time of small code snippets
+
+  * Basic Examples
+
+  * Python Interface
+
+  * Command-Line Interface
+
+  * Examples
+
+* "trace" --- Trace or track Python statement execution
+
+  * Command-Line Usage
+
+    * Main options
+
+    * Modifiers
+
+    * Filters
+
+  * Programmatic Interface
