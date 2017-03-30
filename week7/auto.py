@@ -22,7 +22,7 @@ def completme(sentence='I want', amount_of_words=3):
         result = json.loads(urlobj.read())
         if len(result[1]) > 1:
             result = choice(result[1]).capitalize().encode("utf-8")
-            return ' ' + ' '.join(result.split()[2:])
+            return ' ' + ' '.join(result.split()[3:])
             #return choice(result[1]).capitalize().encode("utf-8")
         else:
             return 'Nop'
