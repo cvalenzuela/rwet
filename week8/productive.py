@@ -8,11 +8,19 @@ from random import choice, randint
 # http://www.decontextualize.com/teaching/rwet/n-grams-and-markov-chains/
 # --------
 
-supreme_conversations = open("data/supreme.conversations.txt").read().split()
-movie_quotes = open("data/moviequotes.memorable_quotes.txt").read().split()
+supreme_conversations = open("data/supreme.conversations.txt")
+movie_quotes = open("data/moviequotes.memorable_quotes.txt")
 
-model = markov.build_model(supreme_conversations, 2)
-#generated = markov.generate(model, 2, ["this", "is"])
+data = ""
+
+for line in supreme_conversations:
+    line = line.strip()
+    line = line.split('+++$+++')
+    data+=line[-1]
+
+words = data.split()
+
+model = markov.build_model(words, 2)
 
 # get the current text
 msword_text = asrun(current_text).split('\r')
@@ -23,7 +31,6 @@ for line in msword_text:
 
 for i in range(2):
     asrun(linebreak()) # add a new line and then begin writting
-
 
 for line in decoded_text:
     if len(line) > 2:
@@ -36,5 +43,3 @@ for line in decoded_text:
         asrun(paste_text(""))
 
 print 'Thanks for being productive'
-# paste the generated markov chain
-#paste = asrun(paste_new_text)
