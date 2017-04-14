@@ -1,0 +1,10 @@
+{
+  "extends": "semistandard",
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "Tangram": true,
+    "L": true
+  }
+}

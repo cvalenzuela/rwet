@@ -3,7 +3,7 @@
 from applescript import asrun, asquote, current_text, paste_text, linebreak
 import markov
 from random import choice, randint
-
+import robobrowser
 # Markov model
 # http://www.decontextualize.com/teaching/rwet/n-grams-and-markov-chains/
 # --------
@@ -13,7 +13,7 @@ movie_quotes = open("data/moviequotes.memorable_quotes.txt")
 
 data = ""
 
-for line in supreme_conversations:
+for line in movie_quotes:
     line = line.strip()
     line = line.split('+++$+++')
     data+=line[-1]
