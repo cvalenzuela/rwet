@@ -3,3 +3,12 @@
   width: 100%;
   position: absolute;
 }
+
+
+.leaflet-routing-alt {
+  max-height: 420px;
+}
+
+.leaflet-routing-container {
+  width: 450px;
+}

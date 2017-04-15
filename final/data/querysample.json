@@ -1,0 +1,29 @@
+[{
+	"lat": 40.730079,
+	"lng": -73.992844,
+	"instruction": "Walk southwest on Broadway."
+}, {
+	"lat": 40.728412,
+	"lng": -73.994256,
+	"instruction": "Turn right onto West 4th Street."
+}, {
+	"lat": 40.728809,
+	"lng": -73.995064,
+	"instruction": "Turn left onto Mercer Street."
+}, {
+	"lat": 40.728767,
+	"lng": -73.995095,
+	"instruction": "Turn right onto West 4th Street."
+}, {
+	"lat": 40.729476,
+	"lng": -73.996552,
+	"instruction": "Continue on Washington Square South / West 4th Street."
+}, {
+	"lat": 40.729541,
+	"lng": -73.996682,
+	"instruction": "Continue on Washington Square South."
+}, {
+	"lat": 40.729747,
+	"lng": -73.997109,
+	"instruction": "Your destination is on the left."
+}]
