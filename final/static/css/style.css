@@ -1,14 +1,115 @@
+/*
+Fonts
+*/
+@font-face {
+  font-family: 'Noe-Display-Bold';
+  src: url('../fonts/Noe-Display-Bold.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Noe-Display-Regular-Italic';
+  src: url('../fonts/Noe-Display-Regular-Italic.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Noe-Text-Regular';
+  src: url('../fonts/Noe-Text-Regular.ttf');
+  font-weight: normal;
+}
+
 #map {
   height: 100%;
   width: 100%;
   position: absolute;
 }
 
+.leaflet-top {
+  top: 0px;
+}
+
+td{
+  font-family: 'Noe-Text-Regular';
+  font-size: 13px;
+  padding: 8px;
+}
+
+h1{
+  font-size: 30px;
+  font-family: Noe-Display-Bold;
+  padding: 0px 0px 0px 10px;
+  letter-spacing: 4px;
+  color: #2b2b2b;
+  margin: 10px;
+}
+
+#title{
+  position: absolute;
+  z-index: 999;
+  padding: 0px;
+  background: rgba(255, 255, 255, 0.96);
+}
 
 .leaflet-routing-alt {
   max-height: 420px;
+  margin-top: 2px;
+  overflow-y: auto;
+  transition: all 0.2s ease;
+  margin-bottom: 0px;
 }
 
 .leaflet-routing-container {
   width: 450px;
+}
+
+.leaflet-touch .leaflet-bar {
+  background-clip: padding-box;
+  background: #ffffff;
+  padding: 10px;
+  border: none;
+}
+
+.start{
+  display: none;
+}
+
+.leaflet-routing-geocoders input {
+  width: calc(100% - 30px);
+  line-height: 1.67;
+  border: 1px solid #fff;
+  border-bottom: 1px solid gainsboro;
+  margin: 0px 2px;
+  font-size: 13px;
+  font-family: 'Noe-Text-Regular';
+}
+
+.leaflet-routing-geocoders button{
+  display: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border: none;
+  outline-offset: 0px;
+  outline: none;
+}
+
+::selection {
+  background: #e9eae9; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #e9eae9; /* Gecko Browsers */
+}
+
+.info{
+  font-family: "Noe-Display-Regular-Italic";
+  text-align: right;
+}
+
+.info::before{
+  background-image: none;
+}
+
+.leaflet-control-zoom{
+  display: none;
 }

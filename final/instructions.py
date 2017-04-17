@@ -4,8 +4,7 @@ import pandas
 from map_knn import get_knn
 
 # test query
-#query = json.loads(open("data/querysample.json").read())
-
+#routes = json.loads(open("data/querysample.json").read())
 # for every instruction, get the first two words
 # for i in range(len(query)):
 #     instructions.append(query[i]['instruction'].split()[:2])
