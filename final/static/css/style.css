@@ -65,9 +65,10 @@ h1{
 
 .leaflet-touch .leaflet-bar {
   background-clip: padding-box;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
   padding: 10px;
   border: none;
+  border-radius: 0px;
 }
 
 .start{

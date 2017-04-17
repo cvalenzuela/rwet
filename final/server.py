@@ -49,12 +49,12 @@ def upload():
     instructions = []
     routes = json.loads(request.args['routes'])
     #sentence = 'ince of denmark hamlet prince of denmark'
-    diversity = float(0.5)
+    diversity = float(0.4)
     length = int(97)
 
     for route in routes:
         sentence = 'ince of denmark hamlet prince of denmark'
-        #sentence = route["instruction"]
+        initial_route = route["instruction"]
         generated = ''
         # generated += sentence
         for i in range(length):
@@ -66,6 +66,7 @@ def upload():
             next_char = indices_char[next_index]
             generated += next_char
             sentence = sentence[1:] + next_char
+        generated = ' '.join(initial_route.split()[:2]) + generated
         instructions.append(generated)
     return jsonify(status='success', result=instructions);
 

@@ -28,9 +28,14 @@ layer.addTo(map);
 // map.setView([40.70531887544228, -74.00976419448853], 9);
 
 var imageIcon = L.icon({
-  iconUrl: 'static/js/images/hatch_2.png',
-  iconSize:     [38, 45], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  iconUrl: 'static/js/images/icon.png',
+  shadowUrl: 'static/js/images/iconshadow.png',
+
+  iconSize:     [30, 30], // size of the icon
+  shadowSize:   [30, 30], // size of the shadow
+  iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+  shadowAnchor: [1, 1],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 // Routing control
@@ -57,7 +62,7 @@ L.Routing.control({
   formatter: new L.Routing.mapzenFormatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
   routeWhileDragging: false,
-  geocoder: L.Control.Geocoder.nominatim()
+  geocoder: L.Control.Geocoder.nominatim(),
 })
 
 .on('routesfound', function(e) {
