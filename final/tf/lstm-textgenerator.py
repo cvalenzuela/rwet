@@ -14,8 +14,8 @@ import sys
 from utils import sample # the name of the function in the utils
 
 # Step 1 - get your data
-path = get_file('nietzche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-#path = 'austen.txt'
+#path = get_file('nietzche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
+path = 'nietzsche.txt'
 
 text = open(path).read().lower() # read the file and convert it to lowercase
 

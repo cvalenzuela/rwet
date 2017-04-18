@@ -10,20 +10,28 @@ var routes = [];
 var instructions_set;
 
 // Mapzen map
-// L.Mapzen.apiKey = "mapzen-u1JCMvx";
-// var map = L.Mapzen.map("map", {
-//   // center: [41.8758,-87.6189],
-//   zoom: 8
-// });
-
-var map = L.map('map');
-
-var layer = Tangram.leafletLayer({
-    scene: 'static/js/scene.yaml',
-    attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+L.Mapzen.apiKey = "mapzen-u1JCMvx";
+var map = L.Mapzen.map("map", {
+  // center: [41.8758,-87.6189],
+  zoom: 8,
+  dragging: false,
+  maxZoom: 18,
+  zoomControl: false,
+  // trackResize: false,
+  // boxZoom: false,
+  // doubleClickZoom: false,
+  // attributionControl: false,
+  scrollWheelZoom: false
 });
 
-layer.addTo(map);
+// var map = L.map('map');
+//
+// var layer = Tangram.leafletLayer({
+//     scene: 'static/js/scene.yaml',
+//     attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+// });
+
+// layer.addTo(map);
 
 // map.setView([40.70531887544228, -74.00976419448853], 9);
 
@@ -31,15 +39,15 @@ var imageIcon = L.icon({
   iconUrl: 'static/js/images/icon.png',
   shadowUrl: 'static/js/images/iconshadow.png',
 
-  iconSize:     [30, 30], // size of the icon
-  shadowSize:   [30, 30], // size of the shadow
+  iconSize:     [0, 0], // size of the icon
+  shadowSize:   [0, 0], // size of the shadow
   iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
   shadowAnchor: [1, 1],  // the same for the shadow
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 // Routing control
-L.Routing.control({
+var routeControls = L.Routing.control({
   waypoints: [
     L.latLng(40.729603, -73.993704),
     L.latLng(40.729644, -73.997196)
@@ -55,8 +63,8 @@ L.Routing.control({
   },
   lineOptions: {
     styles: [
-    {color: "#ffffff", opacity: 0.8, weight: 12},
-    {color: "#ffffff", opacity: 1, weight: 6}
+    {color: "#aaaaaa", opacity: 0.8, weight: 12},
+    {color: "#aaaaaa", opacity: 1, weight: 6}
     ]},
   router: L.Routing.mapzen("mapzen-u1JCMvx", {costing:"pedestrian"}),
   formatter: new L.Routing.mapzenFormatter(),
