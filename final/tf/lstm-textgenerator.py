@@ -15,9 +15,9 @@ from utils import sample # the name of the function in the utils
 
 # Step 1 - get your data
 #path = get_file('nietzche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-path = 'nietzsche.txt'
+path = 'edgarallanpoe.txt'
 
-text = open(path).read().lower() # read the file and convert it to lowercase
+text = open(path, "utf-8").read().lower() # read the file and convert it to lowercase
 
 # get and sort all unique characters
 chars = sorted(list(set(text)))
@@ -86,7 +86,7 @@ for iteration in range(1,2):
             sys.stdout.write(next_char)
             sys.stdout.flush()
         print()
-    model.save("nietzche_model.h5")
+    model.save("edgarallanpoe.h5")
 
 # import keras
 # from keras.models import load_model
