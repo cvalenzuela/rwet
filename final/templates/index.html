@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Directions</title>
+  <title>Turn by Turn</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="{{url_for('static', filename='libraries/leaflet/leaflet.css') }}">
   <link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
@@ -13,8 +13,17 @@
 
 <body>
   <div id="title">
-    <h1>Directions for a City</h1>
+    <h1>Turn by Turn</h1>
   </div>
+  <div id="about">
+    <h3>About</h3>
+    <p>Routes are generated using a <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank">LSTM network</a> trained on the <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads" target="_blank" >25 most download books from the Gutenberg Project.</a> The seed for each route are the first three letter from the original route.<br />
+    Made by <a href="https://github.com/cvalenzuela" target="_blank">cvalenzuela</a>
+    </p>
+  </div>
+
+  <img id="loading" src="{{url_for('static', filename='css/loading.gif') }}" />
+  <!-- <p id="loading">loading</p> -->
   <div id="map"></div>
   <script src="{{url_for('static', filename='libraries/leaflet/leaflet.js') }}"></script>
   <script src="https://mapzen.com/js/mapzen.min.js"></script>

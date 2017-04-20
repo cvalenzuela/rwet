@@ -9,6 +9,10 @@ cvalenzuela
 var routes = [];
 var instructions_set;
 
+var originalRoutes;
+
+var loading = document.getElementById('loading');
+
 // Mapzen map
 L.Mapzen.apiKey = "mapzen-u1JCMvx";
 var map = L.Mapzen.map("map", {
@@ -74,33 +78,45 @@ var routeControls = L.Routing.control({
 })
 
 .on('routesfound', function(e) {
+  originalRoutes = e;
   routes = [];
-
+  console.log('1) Amount of found routes for this two addresses: ' + originalRoutes.routes[0].instructions.length);
+  loading.style.display = 'block'
   // store every waypoint instruction, lat and lng
-  for (var i = 0; i < e.routes[0].instructions.length; i++){
+  for (var i = 0; i < originalRoutes.routes[0].instructions.length; i++){
     var route = {
-      "lat": e.routes[0].coordinates[e.routes[0].instructions[i].index][0],
-      "lng": e.routes[0].coordinates[e.routes[0].instructions[i].index][1],
-      "instruction": e.routes[0].instructions[i].instruction
+      "lat": originalRoutes.routes[0].coordinates[originalRoutes.routes[0].instructions[i].index][0],
+      "lng": originalRoutes.routes[0].coordinates[originalRoutes.routes[0].instructions[i].index][1],
+      "instruction": originalRoutes.routes[0].instructions[i].instruction.toLowerCase()
     }
     routes.push(route);
+  }
+
+  // Change the instructions
+  function changeInstructions(){
+    var td = document.getElementsByTagName('td')
+    var current = 0;
+
+    // get all current instructions and change them
+    for(var i = 0; i <td.length; i++){
+      if(td[i].innerText.length > 10){
+        console.log('3.' + i + ') Changing route: ' + td[i].innerText +  ' -- with: ' + instructions_set[current] )
+        td[i].innerText = instructions_set[current]
+        current ++;
+      }
+    }
   }
 
   // Send the data AJAX to server
   $.getJSON($SCRIPT_ROOT + '/_lstm', {
     'routes': JSON.stringify(routes),
   }, function(data) {
+    instructions_set = []
     instructions_set = data.result
-    console.log(data.status)
-    console.log(instructions_set)
+    //console.log(data.status)
+    console.log('2) The server responded with a set of instruction of: ' + instructions_set.length)
+    changeInstructions()
+    loading.style.display = 'none'
   });
-
-  // Change the instructions
-  for(var i = 0; i < e.routes[0].instructions.length; i++){
-    if (instructions_set != null){
-      e.routes[0].instructions[i].instruction = instructions_set[i];
-    }
-  }
-
 })
 .addTo(map);

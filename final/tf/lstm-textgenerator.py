@@ -17,19 +17,14 @@ from utils import sample # the name of the function in the utils
 #path = get_file('nietzche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
 path = 'edgarallanpoe.txt'
 
-text = open(path, "utf-8").read().lower() # read the file and convert it to lowercase
+text = open(path, encoding="utf8").read().lower() # read the file and convert it to lowercase
 
 # get and sort all unique characters
 chars = sorted(list(set(text)))
 
 # what position does each character exist at in the prev list. create a dictionary for it. two in reverse
 char_indices = dict((c,i) for i, c in enumerate(chars))
-
 indices_char = dict((i, c) for i, c in enumerate(chars))
-
-char_indices["a"]
-
-indices_char[27]
 
 # cut your text into overlapping sequences
 maxlen = 40
