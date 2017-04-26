@@ -8,3 +8,4 @@ venv
 .mp4
 week8/data/movie_lines.txt
 week8/data/moviequotes.scripts.txt
+*/__pycache__

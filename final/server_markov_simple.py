@@ -4,8 +4,8 @@ import markov
 import json
 
 # set up flask app
-app = Flask(__name__)
-app.debug = True
+app = Flask(__name__, static_url_path='')
+app.debug = False
 
 #metamorphosis, shakespear , gutenberg, darwin
 text = open('source_text/gutenberg.txt').read().lower()
