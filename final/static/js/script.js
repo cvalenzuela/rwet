@@ -107,8 +107,8 @@ var routeControls = L.Routing.control({
     }
   }
 
-  // Send the data AJAX to server
-  $.getJSON($SCRIPT_ROOT + '/_lstm', {
+  // Send the data AJAX to server (options: _lstm, _markov, _knn)
+  $.getJSON($SCRIPT_ROOT + '/_markov', {
     'routes': JSON.stringify(routes),
   }, function(data) {
     instructions_set = []

@@ -19,8 +19,9 @@ for line in movie_quotes:
     data+=line[-1]
 
 words = data.split()
-
+words[0:2]
 model = markov.build_model(words, 2)
+" ".join(markov.generate(model, 2, ['the', 'police']))
 
 # get the current text
 msword_text = asrun(current_text).split('\r')

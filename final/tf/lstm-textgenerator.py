@@ -46,17 +46,23 @@ for i, sentence in enumerate(sentences):
     y[i, char_indices[next_chars[i]]] = 1
 
 # build LSTM model
+# 2MB 256 or 128
+# 5-8MB 512
+# 10-20MB 1024
+# 25+
 model = Sequential()
-model.add(LSTM(128, input_shape=(maxlen, len(chars))))
+model.add(LSTM(512, input_shape=(maxlen, len(chars))))
+#model.add(LSTM(512, _____))
+#model.add(LSTM(512, _____))
 model.add(Dense(len(chars))) # fully connected nn
 model.add(Activation('softmax'))
-optimizer = RMSprop(lr=0.01) # perform gradient descent
+optimizer = RMSprop(lr=0.001) # perform gradient descent
 model.compile(loss='categorical_crossentropy', optimizer=optimizer)
 
 # train your model
 for iteration in range(1,2):
     print('Iteration', iteration)
-    model.fit(X, y, batch_size=128, epochs=1) # epochs is looping over the sentence in batches of 128
+    model.fit(X, y, batch_size=128, epochs=10) # epochs is looping over the sentence in batches of 128
 
     start_index = random.randint(0, len(text)-maxlen-1)
 
