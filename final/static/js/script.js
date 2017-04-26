@@ -14,8 +14,7 @@ var originalRoutes;
 var loading = document.getElementById('loading');
 
 // Mapzen map
-L.Mapzen.apiKey = "mapzen-u1JCMvx";
-var map = L.Mapzen.map("map", {
+var map = L.map("map", {
   // center: [41.8758,-87.6189],
   zoom: 8,
   dragging: false,
@@ -28,26 +27,16 @@ var map = L.Mapzen.map("map", {
   scrollWheelZoom: false
 });
 
-// var map = L.map('map');
-//
-// var layer = Tangram.leafletLayer({
-//     scene: 'static/js/scene.yaml',
-//     attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
-// });
-
-// layer.addTo(map);
-
-// map.setView([40.70531887544228, -74.00976419448853], 9);
 
 var imageIcon = L.icon({
   iconUrl: 'static/js/images/icon.png',
   shadowUrl: 'static/js/images/iconshadow.png',
 
-  iconSize:     [0, 0], // size of the icon
-  shadowSize:   [0, 0], // size of the shadow
-  iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-  shadowAnchor: [1, 1],  // the same for the shadow
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconSize:     [0, 0],
+  shadowSize:   [0, 0],
+  iconAnchor:   [0, 0],
+  shadowAnchor: [1, 1],
+  popupAnchor:  [-3, -76]
 });
 
 // Routing control
