@@ -1,5 +1,7 @@
 # Turn by Turn
 
+WIP!, this documentation is not ready yet
+
 Turn by Turn is an experiment to generate random directions for a given route in a map. The directions are generated using Markov chains with a corpus based on literature and books related to New York City. The seed for each direction is the first two words from the original route.
 
 ###### Directions to get from Wall Street to MOMA:
@@ -19,7 +21,10 @@ I started playing with walking routes given by google's routing algorithm. Using
 
 ##### LSTM vs Markov Chains
 
-My first approach involved training a LSTM neural network on a source text it decide the instrucion using the first two or three words in a route.
+My first approach involved training a LSTM neural network on a source text and then let it decide the set of instructions using the first two or three words in a route as the seed. I used different source text as the training corpus. My attempts included all of Shakespeare's work, Kafka, Darwin and a compilation of the most downloaded books in the Gutenberg project.
+```
+Turn left on about the state of the state and state of the state state
+```
 
 ##### Corpus build with
 
