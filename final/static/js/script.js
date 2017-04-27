@@ -5,13 +5,13 @@ RWET 2017
 cvalenzuela
 */
 
-// Variables
 var routes = [];
 var instructions_set;
 
 var originalRoutes;
 
 var loading = document.getElementById('loading');
+var error = document.getElementById('error');
 
 // Mapzen map
 var map = L.map("map", {
@@ -27,18 +27,6 @@ var map = L.map("map", {
   scrollWheelZoom: false
 });
 
-
-var imageIcon = L.icon({
-  iconUrl: 'static/js/images/icon.png',
-  shadowUrl: 'static/js/images/iconshadow.png',
-
-  iconSize:     [0, 0],
-  shadowSize:   [0, 0],
-  iconAnchor:   [0, 0],
-  shadowAnchor: [1, 1],
-  popupAnchor:  [-3, -76]
-});
-
 // Routing control
 var routeControls = L.Routing.control({
   waypoints: [
@@ -46,12 +34,12 @@ var routeControls = L.Routing.control({
     L.latLng(40.729644, -73.997196)
   ],
   pointMarkerStyle: {
-    radius: 5,color: '#000000',fillColor: 'white',opacity: 1,fillOpacity: 0.7
+    radius: 5,color: '#000000',fillColor: 'white',opacity: 0,fillOpacity: 0
   },
   createMarker: function(i, waypoint, n){
     return L.marker(waypoint.latLng, {
       draggable: true,
-      icon: imageIcon
+      opacity: 0
     })
   },
   lineOptions: {
@@ -69,9 +57,11 @@ var routeControls = L.Routing.control({
 .on('routesfound', function(e) {
   originalRoutes = e;
   routes = [];
-  console.log('1) Amount of found routes for this two addresses: ' + originalRoutes.routes[0].instructions.length);
+  //console.log('1) Amount of found routes for this two addresses: ' + originalRoutes.routes[0].instructions.length);
   loading.style.display = 'block'
+  error.style.display = 'none'
   // store every waypoint instruction, lat and lng
+
   for (var i = 0; i < originalRoutes.routes[0].instructions.length; i++){
     var route = {
       "lat": originalRoutes.routes[0].coordinates[originalRoutes.routes[0].instructions[i].index][0],
@@ -89,7 +79,7 @@ var routeControls = L.Routing.control({
     // get all current instructions and change them
     for(var i = 0; i <td.length; i++){
       if(td[i].innerText.length > 10){
-        console.log('3.' + i + ') Changing route: ' + td[i].innerText +  ' -- with: ' + instructions_set[current] )
+        //console.log('3.' + i + ') Changing route: ' + td[i].innerText +  ' -- with: ' + instructions_set[current] )
         td[i].innerText = instructions_set[current]
         current ++;
       }
@@ -103,9 +93,12 @@ var routeControls = L.Routing.control({
     instructions_set = []
     instructions_set = data.result
     //console.log(data.status)
-    console.log('2) The server responded with a set of instruction of: ' + instructions_set.length)
+    //console.log('2) The server responded with a set of instruction of: ' + instructions_set.length)
     changeInstructions()
     loading.style.display = 'none'
   });
+})
+.on('routingerror', function(e){
+  error.style.display = 'block'
 })
 .addTo(map);

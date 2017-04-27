@@ -7,8 +7,8 @@ import json
 app = Flask(__name__, static_url_path='')
 app.debug = False
 
-#metamorphosis, shakespear , gutenberg, darwin
-text = open('source_text/gutenberg.txt').read().lower()
+#metamorphosis, shakespear , gutenberg, darwin, ny
+text = open('source_text/ny.txt').read().lower()
 text = text.split()
 model = markov.build_model(text, 1)
 

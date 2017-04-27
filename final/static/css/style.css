@@ -48,6 +48,13 @@ h3{
   padding: 4px;
 }
 
+h6{
+  font-family: 'Noe-Display-Bold';
+  color: rgb(80, 79, 77);
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
 canvas{
   display: none;
 }
@@ -94,6 +101,19 @@ id
   width: 100%;
   position: absolute;
   background: white;
+}
+
+#error{
+  z-index: 999;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 370px;
+  display: none;
+  top: 40%;
 }
 
 #loading{

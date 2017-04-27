@@ -3,6 +3,7 @@
 <head>
   <title>Turn by Turn</title>
   <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='favicon.ico') }}"/>
   <link rel="stylesheet" href="{{url_for('static', filename='libraries/leaflet/leaflet.css') }}">
   <link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
   <link rel="stylesheet" href="{{url_for('static', filename='libraries/lrm-mapzen-1.0.0/leaflet.routing.mapzen.css') }}">
@@ -14,9 +15,12 @@
   <div id="title">
     <h1>Turn by Turn</h1>
   </div>
+  <div id="error">
+    <h6>Don't go to far! I couldn't find a route. <br />Try with another direction.</h6>
+  </div>
   <div id="about">
     <h3>About</h3>
-    <p>Routes are generated using markov chains</a> with a model of the <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads" target="_blank" >25 most download books from the Gutenberg Project.</a> The seed for each route are the first two letter from the original route.<br />
+    <p>Instructions routes are generated using markov chains with a corpus based on <a href="#" target="_blank"> literature and books related to New York City.</a> The seed for each route are the first two letter from the original route.<br />
     Made by <a href="https://github.com/cvalenzuela" target="_blank">cvalenzuela</a>
     </p>
   </div>
