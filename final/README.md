@@ -14,7 +14,8 @@ This project tries to explore those relationships by generating text/poetics/ins
 
 I started playing with walking routes given by google's routing algorithm. Using them as seed for generative text. Most of the time, this instructions tend to be very specific and clear. Appropriating the algorithmic nature of this instructions was my main goal.
 
-![google maps](images/google.jpg) Google's route instructions
+![google maps](images/google.jpg)
+
 
 ##### LSTM vs Markov Chains
 
@@ -45,15 +46,10 @@ My first approach involved training a LSTM neural network on a source text it de
 
 ##### Results
 
-![image 5](images/5.jpg)
+![image 5](images/2.jpg)
 
-![image 2](images/2.jpg)
+![image 2](images/3.jpg)
 
-![image 3](images/3.jpg)
-
-![image 4](images/4.jpg)
-
-![image 6](images/6.jpg)
 
 ## Live Version
 
